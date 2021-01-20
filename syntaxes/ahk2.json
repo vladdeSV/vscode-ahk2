@@ -1,7 +1,4 @@
 {
-  "fileTypes": [
-    "ahk2"
-  ],
   "name": "AutoHotkey",
   "patterns": [
     {

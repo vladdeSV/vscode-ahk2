@@ -40,11 +40,11 @@
                 "id": "ahk2",
                 "aliases": [
                     "AutoHotkey v2",
-                    "ahk",
-                    "ahk2"
+                    "AHK"
                 ],
                 "extensions": [
                     ".ahk2",
+                    ".ah2",
                     ".ahk"
                 ],
                 "configuration": "./language-configuration.json"
