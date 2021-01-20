@@ -1,14 +1,39 @@
 {
     "name": "vscode-ahk2",
+    "publisher": "vladdeSV",
     "displayName": "AutoHotkey v2",
     "description": "AutoHotkey v2 support in VSCode",
     "version": "0.0.1",
     "engines": {
         "vscode": "^1.52.0"
     },
+    "license": "MIT",
     "categories": [
         "Programming Languages"
     ],
+    "keywords": [
+        "ahk",
+        "ahk2"
+    ],
+    "preview": true,
+    "icon": "resource/icon.png",
+    "author": {
+        "name": "Vladimirs Nordholm",
+        "email": "v@vladde.net",
+        "url": "https://vladde.net/"
+    },
+    "galleryBanner": {
+        "color": "#3D9035",
+        "theme": "dark"
+    },
+    "bugs": {
+        "url": "https://github.com/vladdeSV/vscode-ahk2/issues",
+        "email": "v@vladde.net"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/vladdeSV/vscode-ahk2.git"
+    },
     "contributes": {
         "languages": [
             {
