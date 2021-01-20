@@ -29,7 +29,7 @@
             {
                 "language": "ahk2",
                 "scopeName": "source.ahk2",
-                "path": "./syntaxes/ahk2.tmLanguage"
+                "path": "./syntaxes/ahk2.json"
             }
         ]
     }
