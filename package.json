@@ -1,0 +1,36 @@
+{
+    "name": "vscode-ahk2",
+    "displayName": "AutoHotkey v2",
+    "description": "AutoHotkey v2 support in VSCode",
+    "version": "0.0.1",
+    "engines": {
+        "vscode": "^1.52.0"
+    },
+    "categories": [
+        "Programming Languages"
+    ],
+    "contributes": {
+        "languages": [
+            {
+                "id": "ahk2",
+                "aliases": [
+                    "AutoHotkey v2",
+                    "ahk",
+                    "ahk2"
+                ],
+                "extensions": [
+                    ".ahk2",
+                    ".ahk"
+                ],
+                "configuration": "./language-configuration.json"
+            }
+        ],
+        "grammars": [
+            {
+                "language": "ahk2",
+                "scopeName": "source.ahk2",
+                "path": "./syntaxes/ahk2.tmLanguage"
+            }
+        ]
+    }
+}
