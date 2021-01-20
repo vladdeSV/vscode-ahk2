@@ -1,5 +1,7 @@
 {
   "name": "AutoHotkey",
+  "scopeName": "source.ahk2",
+  "uuid": "76BDF974-5687-424E-BE8E-7D789DF50844",
   "patterns": [
     {
       "captures": {
@@ -190,7 +192,5 @@
         }
       ]
     }
-  ],
-  "scopeName": "source.ahk2",
-  "uuid": "76BDF974-5687-424E-BE8E-7D789DF50844"
+  ]
 }
