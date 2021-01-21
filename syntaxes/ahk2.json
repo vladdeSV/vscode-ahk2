@@ -86,6 +86,27 @@
       }
     },
     {
+      "name": "directives.custom.requires.ahk",
+      "match": "(#(?i:requires))\\s+(AutoHotkey([\\s\\t](v?[12]\\d*(\\.\\d)?(\\.\\d)?(-(a\\d+)?(\\.\\d+)?)?))?)?([^;]*)(;.*)?",
+      "captures": {
+        "1": {
+          "name": "keyword.other.directives.single.ahk"
+        },
+        "2": {
+          "name": "string.unquoted.directive.ahk"
+        },
+        "4": {
+          "name": "variable.other.version.ahk"
+        },
+        "10": {
+          "name": "invalid.illegal.ahk"
+        },
+        "11": {
+          "name": "comment.line.ahk"
+        }
+      }
+    },
+    {
       "name": "directives.single.ahk",
       "match": "^\\s*(#(?i:installkeybdhook|installmousehook|notrayicon|persistent|winactivateforce))([^;]*)(;.*)?",
       "captures": {
