@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="/resource/icon.png" height="50" width="50">
+  <img src="/resource/icon.png" height="150" width="150">
   <p>AutoHotKey v2 support in Visual Studio Code</p>
 </div>
 
