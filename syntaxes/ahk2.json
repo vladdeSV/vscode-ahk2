@@ -13,13 +13,16 @@
       "name": "keyword.other.directives.ahk"
     },
     {
+      "match": "^\\s*\\w+::",
+      "name": "keyword.operator.ahk"
+    },
+    {
+      "match": "\\b(?i:byref)\\b",
+      "name": "storage.modifier.ahk"
+    },
+    {
       "name": "string.quoted.double.ahk",
-      "match": "\".*(\\{\\w+\\}).*\"",
-      "captures": {
-        "1": {
-          "name": "keyword.other.ahk"
-        }
-      }
+      "match": "\".*?\""
     },
     {
       "match": ";.*$",
@@ -40,7 +43,7 @@
     },
     {
       "match": ":=|\\.=",
-      "name": "keyword.operator.equals.ahk"
+      "name": "keyword.operator.assign.ahk"
     },
     {
       "match": "<|>|<>|[<>=]=|!=",
@@ -75,10 +78,6 @@
       "name": "support.constant.ahk"
     },
     {
-      "match": "\\b(?i:byref|shift|lshift|rshift|alt|lalt|ralt|control|lcontrol|rcontrol|ctrl|lctrl|rctrl|lwin|rwin|appskey|altdown|altup|shiftdown|shiftup|ctrldown|ctrlup|lwindown|lwinup|rwindown|rwinup|lbutton|rbutton|mbutton|wheelup|wheelleft|wheelright|wheeldown|xbutton1|xbutton2|joy1|joy2|joy3|joy4|joy5|joy6|joy7|joy8|joy9|joy10|joy11|joy12|joy13|joy14|joy15|joy16|joy17|joy18|joy19|joy20|joy21|joy22|joy23|joy24|joy25|joy26|joy27|joy28|joy29|joy30|joy31|joy32|joyx|joyy|joyz|joyr|joyu|joyv|joypov|joyname|joybuttons|joyaxes|joyinfo|space|tab|enter|escape|esc|backspace|bs|delete|del|insert|ins|pgup|pgdn|home|end|up|down|left|right|printscreen|ctrlbreak|pause|scrolllock|capslock|numlock|numpad0|numpad1|numpad2|numpad3|numpad4|numpad5|numpad6|numpad7|numpad8|numpad9|numpadmult|numpadadd|numpadsub|numpaddiv|numpaddot|numpaddel|numpadins|numpadclear|numpadup|numpaddown|numpadleft|numpadright|numpadhome|numpadend|numpadpgup|numpadpgdn|numpadenter|f1|f2|f3|f4|f5|f6|f7|f8|f9|f10|f11|f12|f13|f14|f15|f16|f17|f18|f19|f20|f21|f22|f23|f24|browser_back|browser_forward|browser_refresh|browser_stop|browser_search|browser_favorites|browser_home|volume_mute|volume_down|volume_up|media_next|media_prev|media_stop|media_play_pause|launch_mail|launch_media|launch_app1|launch_app2)\\b",
-      "name": "keyword.other.ahk"
-    },
-    {
       "match": "\\b(?<!\\.)(?i:if|else|return|loop|break|for|while|class|extends|catch|finally|throw|try|until|continue|critical|exit|exitapp)\\b",
       "name": "keyword.control.ahk"
     },
@@ -87,13 +86,8 @@
       "name": "entity.name.function.ahk"
     },
     {
-      "captures": {
-        "1": {
-          "name": "constant.other.ahk"
-        }
-      },
-      "match": "^\\s*(.+)::",
-      "name": "hotkey.ahk"
+      "name": "support.function.ahk",
+      "match": "\\b(i?:msgbox)\\b"
     }
   ]
 }
