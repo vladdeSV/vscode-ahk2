@@ -140,6 +140,15 @@
       }
     },
     {
+      "name": "directives.custom.hotif.ahk",
+      "match": "(#(?i:hotif))\\b",
+      "captures": {
+        "1": {
+          "name": "keyword.other.directives.ahk"
+        }
+      }
+    },
+    {
       "name": "invalid.illegal.directive.unknown.ahk",
       "match": "#.\\w+"
     }
