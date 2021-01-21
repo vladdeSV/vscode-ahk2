@@ -4,7 +4,7 @@
   "uuid": "76BDF974-5687-424E-BE8E-7D789DF50844",
   "patterns": [
     {
-      "name": "comment.line.ahk",
+      "name": "comment.line.character.semicolon.ahk",
       "match": ";.*"
     },
     {
