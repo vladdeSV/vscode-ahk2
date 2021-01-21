@@ -13,9 +13,13 @@
       "name": "keyword.other.directives.ahk"
     },
     {
-      "begin": "\"",
-      "end": "\"",
-      "name": "string.quoted.double.ahk"
+      "name": "string.quoted.double.ahk",
+      "match": "\".*(\\{\\w+\\}).*\"",
+      "captures": {
+        "1": {
+          "name": "keyword.other.ahk"
+        }
+      }
     },
     {
       "match": ";.*$",
