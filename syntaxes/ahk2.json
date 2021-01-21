@@ -4,17 +4,99 @@
   "uuid": "76BDF974-5687-424E-BE8E-7D789DF50844",
   "patterns": [
     {
-      "name": "keyword.other.directives.numeric.ahk",
-      "match": "^\\s*(#(?i:clipboardtimeout|hotiftimeout|hotkeymodifiertimeout|inputlevel|keyhistory|maxhotkeysperinterval|maxthreads|maxthreadsperhotkey))\\b(\\s+((\\d+)|(.*)))?\\s*$",
+      "name": "comment.line.ahk",
+      "match": ";.*"
+    },
+    {
+      "name": "comment.block.ahk",
+      "begin": "/\\*",
+      "end": "\\*/"
+    },
+    {
+      "name": "directives.numeric.ahk",
+      "match": "^\\s*(#(?i:clipboardtimeout|hotiftimeout|hotkeyinterval|hotkeymodifiertimeout|inputlevel|keyhistory|maxhotkeysperinterval|maxthreads|maxthreadsperhotkey))\\s+(\\d+)?([^;]*)(;.*)?",
       "captures": {
         "1": {
-          "name": "keyword.other.directives.ahk"
+          "name": "keyword.other.directives.single.ahk"
+        },
+        "2": {
+          "name": "constant.numeric.directive.ahk"
+        },
+        "3": {
+          "name": "invalid.illegal.ahk"
         },
         "4": {
-          "name": "constant.numeric.ahk"
+          "name": "comment.line.ahk"
+        }
+      }
+    },
+    {
+      "name": "directives.boolean.ahk",
+      "match": "^\\s*(#(?i:maxthreadsbuffer|usehook))\\s+((?i:true|false|[01]))?([^;]*)(;.*)?",
+      "captures": {
+        "1": {
+          "name": "keyword.other.directives.single.ahk"
         },
-        "5": {
-          "name": "invalid.illegal.type.ahk"
+        "2": {
+          "name": "constant.language.boolean.ahk"
+        },
+        "3": {
+          "name": "invalid.illegal.ahk"
+        },
+        "4": {
+          "name": "comment.line.ahk"
+        }
+      }
+    },
+    {
+      "name": "directives.custom.singleinstance.ahk",
+      "match": "^\\s*(#(?i:singleinstance))\\s+((?i:force|prompt|ignore|off))?([^;]*)(;.*)?",
+      "captures": {
+        "1": {
+          "name": "keyword.other.directives.single.ahk"
+        },
+        "2": {
+          "name": "string.unquoted.directive.ahk"
+        },
+        "3": {
+          "name": "invalid.illegal.ahk"
+        },
+        "4": {
+          "name": "comment.line.ahk"
+        }
+      }
+    },
+    {
+      "name": "directives.custom.errorstdout.ahk",
+      "todo": "support both \" and ' ",
+      "match": "^\\s*(#(?i:errorstdout))\\s+(\"(?i:utf-8|utf-8-raw|utf-16|utf-16-raw|cp\\d{3})\")?([^;]*)(;.*)?",
+      "captures": {
+        "1": {
+          "name": "keyword.other.directives.single.ahk"
+        },
+        "2": {
+          "name": "string.quoted.other.directive.ahk"
+        },
+        "3": {
+          "name": "invalid.illegal.ahk"
+        },
+        "4": {
+          "name": "comment.line.ahk"
+        }
+      }
+    },
+    {
+      "name": "directives.single.ahk",
+      "match": "^\\s*(#(?i:installkeybdhook|installmousehook|notrayicon|persistent|winactivateforce))([^;]*)(;.*)?",
+      "captures": {
+        "1": {
+          "name": "keyword.other.directives.single.ahk"
+        },
+        "2": {
+          "name": "invalid.illegal.ahk"
+        },
+        "3": {
+          "name": "comment.line.ahk"
         }
       }
     },
