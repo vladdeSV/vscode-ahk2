@@ -4,7 +4,8 @@
 </div>
 
 ## Features
-- Syntax (limited)
+- Syntax support
+- Smart syntax highlighting (see examples)
 
 ## License
 MIT © [Vladimirs Nordholm](https://github.com/vladdeSV)
