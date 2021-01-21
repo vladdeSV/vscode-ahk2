@@ -13,6 +13,14 @@
       "end": "\\*/"
     },
     {
+      "name": "string.quoted.single.ahk",
+      "match": "'.*?'"
+    },
+    {
+      "name": "string.quoted.double.ahk",
+      "match": "\".*?\""
+    },
+    {
       "name": "constant.numeric.hexadecimal.ahk",
       "match": "\\b(?i:0x[\\da-f]+)\\b"
     },
