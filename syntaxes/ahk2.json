@@ -171,6 +171,42 @@
     {
       "name": "invalid.illegal.directive.unknown.ahk",
       "match": "#.\\w+"
+    },
+    {
+      "name": "keyword.other.special-character.ahk",
+      "match": "\\b(?i:a_(space|tab))\\b"
+    },
+    {
+      "name": "keyword.other.script-properties.ahk",
+      "match": "\\b(?i:a_(args|workingdir|initialworkingdir|scriptdir|scriptname|scriptfullpath|scripthwnd|linenumber|linefile|thisfunc|ahkversion|ahkpath|iscompiled))\\b"
+    },
+    {
+      "name": "keyword.other.date-time.ahk",
+      "match": "\\b(?i:a_(yyyy|m{2,4}|d{2,4}|wday|yday|yweek|hour|min|sec|msec|now(utc)?|tickcount))\\b"
+    },
+    {
+      "name": "keyword.other.script-settings.ahk",
+      "match": "\\b(?i:a_(allowmainwindow|controldelay|coordmode(tooltip|pixel|mouse|caret|menu)|defaultmousespeed|detecthidden(text|windows)|fileencoding|icon(hidden|tip|file|number)|is(critical|paused|suspended)|keydelay(play)?|keyduration(play)?|listlines|mousedelay(play)?|regview|send(level|mode)|storecapslockmode|titlematchmode(speed)?|traymenu|windelay))\\b"
+    },
+    {
+      "name": "keyword.other.user-idle-time.ahk",
+      "match": "\\b(?i:a_(timeidle(physical|keyboard|mouse)?))\\b"
+    },
+    {
+      "name": "keyword.other.hotkey-hotstring-custom-menu-item.ahk",
+      "match": "\\b(?i:a_(thishotkey|priorhotkey|priorkey|timesincethishotkey|timesincepriorhotkey|endchar))\\b"
+    },
+    {
+      "name": "keyword.other.operating-system-user-info.ahk",
+      "match": "\\b(?i:a_(appdata(common)?|computername|comspec|desktop(common)?|is64bitos|isadmin|language|mydocuments|osversion|programfiles|programs(common)?|ptrsize|screendpi|screenheight|screenwidth|startmenu(common)?|startup(common)?|temp|username|windir))\\b"
+    },
+    {
+      "name": "keyword.other.misc.ahk",
+      "match": "\\b(?i:a_(clipboard|cursor|eventinfo|lasterror))\\b"
+    },
+    {
+      "name": "keyword.other.loop.ahk",
+      "match": "\\b(?i:a_(index|loop(file|reg|read)name|loopfield))\\b"
     }
   ]
 }
