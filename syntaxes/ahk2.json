@@ -17,7 +17,7 @@
       "match": "(#(?i:clipboardtimeout|hotiftimeout|hotkeyinterval|hotkeymodifiertimeout|inputlevel|keyhistory|maxhotkeysperinterval|maxthreads|maxthreadsperhotkey))\\s+(\\d+)?([^;]*)(;.*)?",
       "captures": {
         "1": {
-          "name": "keyword.other.directives.single.ahk"
+          "name": "keyword.other.directives.ahk"
         },
         "2": {
           "name": "constant.numeric.directive.ahk"
@@ -35,7 +35,7 @@
       "match": "(#(?i:maxthreadsbuffer|usehook))\\s+((?i:true|false|[01]))?([^;]*)(;.*)?",
       "captures": {
         "1": {
-          "name": "keyword.other.directives.single.ahk"
+          "name": "keyword.other.directives.ahk"
         },
         "2": {
           "name": "constant.language.boolean.ahk"
@@ -53,7 +53,7 @@
       "match": "(#(?i:dllload|include|includeagain))\\s+(\".*?\")?([^;]*)(;.*)?",
       "captures": {
         "1": {
-          "name": "keyword.other.directives.single.ahk"
+          "name": "keyword.other.directives.ahk"
         },
         "2": {
           "name": "string.quoted.ahk"
@@ -71,7 +71,7 @@
       "match": "(#(?i:singleinstance))\\s+((?i:force|prompt|ignore|off))?([^;]*)(;.*)?",
       "captures": {
         "1": {
-          "name": "keyword.other.directives.single.ahk"
+          "name": "keyword.other.directives.ahk"
         },
         "2": {
           "name": "string.unquoted.directive.ahk"
@@ -90,7 +90,7 @@
       "match": "(#(?i:errorstdout))\\s+(\"(?i:utf-8|utf-8-raw|utf-16|utf-16-raw|cp\\d{3})\")?([^;]*)(;.*)?",
       "captures": {
         "1": {
-          "name": "keyword.other.directives.single.ahk"
+          "name": "keyword.other.directives.ahk"
         },
         "2": {
           "name": "string.quoted.other.directive.ahk"
@@ -108,7 +108,7 @@
       "match": "(#(?i:requires))\\s+(AutoHotkey([\\s\\t](v?[12]\\d*(\\.\\d)?(\\.\\d)?(-(a\\d+)?(\\.\\d+)?)?))?)?([^;]*)(;.*)?",
       "captures": {
         "1": {
-          "name": "keyword.other.directives.single.ahk"
+          "name": "keyword.other.directives.ahk"
         },
         "2": {
           "name": "string.unquoted.directive.ahk"
@@ -129,7 +129,7 @@
       "match": "(#(?i:installkeybdhook|installmousehook|notrayicon|persistent|winactivateforce))([^;]*)(;.*)?",
       "captures": {
         "1": {
-          "name": "keyword.other.directives.single.ahk"
+          "name": "keyword.other.directives.ahk"
         },
         "2": {
           "name": "invalid.illegal.ahk"
