@@ -13,6 +13,18 @@
       "end": "\\*/"
     },
     {
+      "name": "constant.numeric.hexadecimal.ahk",
+      "match": "\\b(?i:0x[\\da-f]+)\\b"
+    },
+    {
+      "name": "constant.numeric.scientific.ahk",
+      "match": "\\b\\d+[Ee][-+]?\\d+\\b"
+    },
+    {
+      "name": "constant.numeric.integer.ahk",
+      "match": "\\b\\d+\\b"
+    },
+    {
       "name": "directives.numeric.ahk",
       "match": "(#(?i:clipboardtimeout|hotiftimeout|hotkeyinterval|hotkeymodifiertimeout|inputlevel|keyhistory|maxhotkeysperinterval|maxthreads|maxthreadsperhotkey))\\s+(\\d+)?([^;]*)(;.*)?",
       "captures": {
