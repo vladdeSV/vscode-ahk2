@@ -49,6 +49,24 @@
       }
     },
     {
+      "name": "directives.string.ahk",
+      "match": "(#(?i:dllload|include|includeagain))\\s+(\".*?\")?([^;]*)(;.*)?",
+      "captures": {
+        "1": {
+          "name": "keyword.other.directives.single.ahk"
+        },
+        "2": {
+          "name": "string.quoted.ahk"
+        },
+        "3": {
+          "name": "invalid.illegal.ahk"
+        },
+        "4": {
+          "name": "comment.line.ahk"
+        }
+      }
+    },
+    {
       "name": "directives.custom.singleinstance.ahk",
       "match": "(#(?i:singleinstance))\\s+((?i:force|prompt|ignore|off))?([^;]*)(;.*)?",
       "captures": {
