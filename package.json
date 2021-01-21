@@ -56,6 +56,12 @@
         "scopeName": "source.ahk2",
         "path": "./syntaxes/ahk2.json"
       }
+    ],
+    "snippets": [
+      {
+        "language": "ahk2",
+        "path": "./snippets/ahk2.json"
+      }
     ]
   }
 }
