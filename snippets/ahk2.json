@@ -1,0 +1,102 @@
+{
+  "#ErrorStdOut": {
+    "prefix": "#ErrorStdOut",
+    "body": "#ErrorStdOut \"${1:UTF-8|UTF-8-RAW|UTF-16|UTF-16-RAW|CPnnn}\""
+  },
+  "#SingleInstance": {
+    "prefix": "#SingleInstance",
+    "body": "#SingleInstance ${1:Force|Ignore|Prompt|Off}"
+  },
+  "#Requires": {
+    "prefix": "#Requires",
+    "body": "#Requires AutoHotkey ${1:v2.0-}"
+  },
+  "#DllLoad": {
+    "prefix": "#DllLoad",
+    "body": "#DllLoad \"${1:FileOrDirName}\""
+  },
+  "#Include": {
+    "prefix": "#Include",
+    "body": "#Include \"${1:FileOrDirOrLibName}\""
+  },
+  "#IncludeAgain": {
+    "prefix": "#IncludeAgain",
+    "body": "#IncludeAgain \"${1:FileOrDirName}\""
+  },
+  "#InstallKeybdHook": {
+    "prefix": "#InstallKeybdHook",
+    "body": "#InstallKeybdHook"
+  },
+  "#InstallMouseHook": {
+    "prefix": "#InstallMouseHook",
+    "body": "#InstallMouseHook"
+  },
+  "#NoTrayIcon": {
+    "prefix": "#NoTrayIcon",
+    "body": "#NoTrayIcon"
+  },
+  "#Persistent": {
+    "prefix": "#Persistent",
+    "body": "#Persistent"
+  },
+  "#WinActivateForce": {
+    "prefix": "#WinActivateForce",
+    "body": "#WinActivateForce"
+  },
+  "#HotIf": {
+    "prefix": "#HotIf",
+    "body": "#HotIf ${1:Expression}"
+  },
+  "#MaxThreadsBuffer": {
+    "prefix": "#MaxThreadsBuffer",
+    "body": "${1:#MaxThreadsBuffer ${1:False}"
+  },
+  "#UseHook": {
+    "prefix": "#UseHook",
+    "body": "#UseHook ${1:True|False}"
+  },
+  "#ClipboardTimeout": {
+    "prefix": "#ClipboardTimeout",
+    "body": "#ClipboardTimeout ${1:Milliseconds}"
+  },
+  "#HotIfTimeout": {
+    "prefix": "#HotIfTimeout",
+    "body": "#HotIfTimeout ${1:Milliseconds}"
+  },
+  "#HotkeyInterval": {
+    "prefix": "#HotkeyInterval",
+    "body": "#HotkeyInterval ${1:Milliseconds (default:2000)}"
+  },
+  "#HotkeyModifierTimeout": {
+    "prefix": "#HotkeyModifierTimeout",
+    "body": "#HotkeyModifierTimeout ${1:Milliseconds}"
+  },
+  "#InputLevel": {
+    "prefix": "#InputLevel",
+    "body": "#InputLevel ${1:Level (min:0, max:100)}"
+  },
+  "#KeyHistory": {
+    "prefix": "#KeyHistory",
+    "body": "#KeyHistory ${1:MaxEvents (default:40, max:500, disable:0)}"
+  },
+  "#MaxHotkeysPerInterval": {
+    "prefix": "#MaxHotkeysPerInterval",
+    "body": "#MaxHotkeysPerInterval ${1:Number (default:70)}"
+  },
+  "#MaxThreads": {
+    "prefix": "#MaxThreads",
+    "body": "#MaxThreads ${1:Number (max:255)}"
+  },
+  "#MaxThreadsPerHotkey": {
+    "prefix": "#MaxThreadsPerHotkey",
+    "body": "#MaxThreadsPerHotkey ${1:Number (max:255)}"
+  },
+  "#Warn": {
+    "prefix": "#Warn",
+    "body": "#Warn${1: ${2:UseUnsetLocal|UseUnsetGlobal|VarUnset|LocalSameAsGlobal|Unreachable|All}, ${3:MsgBox|StdOut|OutputDebug|Off}}"
+  },
+  "#MenuMaskKey": {
+    "prefix": "#MenuMaskKey",
+    "body": "#MenuMaskKey ${1:KeyName}"
+  }
+}
