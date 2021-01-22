@@ -2,6 +2,12 @@
   "name": "AutoHotkey",
   "scopeName": "source.ahk2",
   "uuid": "76BDF974-5687-424E-BE8E-7D789DF50844",
+  "repository": {
+    "escape-characters": {
+      "name": "constant.character.escape.ahk",
+      "match": "`[\"`;:nrbtsvaf]"
+    }
+  },
   "patterns": [
     {
       "name": "comment.line.character.semicolon.ahk",
@@ -14,11 +20,23 @@
     },
     {
       "name": "string.quoted.single.ahk",
-      "match": "'.*?'"
+      "begin": "'",
+      "end": "'|$",
+      "patterns": [
+        {
+          "include": "#escape-characters"
+        }
+      ]
     },
     {
       "name": "string.quoted.double.ahk",
-      "match": "\".*?\""
+      "begin": "\"",
+      "end": "\"|$",
+      "patterns": [
+        {
+          "include": "#escape-characters"
+        }
+      ]
     },
     {
       "name": "constant.numeric.hexadecimal.ahk",
