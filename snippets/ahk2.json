@@ -49,7 +49,7 @@
   },
   "#MaxThreadsBuffer": {
     "prefix": "#MaxThreadsBuffer",
-    "body": "${1:#MaxThreadsBuffer ${1:False}"
+    "body": "#MaxThreadsBuffer ${1:False}"
   },
   "#UseHook": {
     "prefix": "#UseHook",
