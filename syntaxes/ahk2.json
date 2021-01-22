@@ -6,17 +6,29 @@
     "escape-characters": {
       "name": "constant.character.escape.ahk",
       "match": "`[\"`;:nrbtsvaf]"
+    },
+    "block-comment": {
+      "name": "comment.block.ahk",
+      "begin": "/\\*",
+      "end": "\\*/",
+      "patterns": [
+        {
+          "include": "#block-comment"
+        }
+      ]
     }
   },
   "patterns": [
     {
-      "name": "comment.line.character.semicolon.ahk",
-      "match": ";.*"
+      "match": "(^|[ \\t])(;.*)",
+      "captures": {
+        "2": {
+          "name": "comment.line.character.semicolon.ahk"
+        }
+      }
     },
     {
-      "name": "comment.block.ahk",
-      "begin": "/\\*",
-      "end": "\\*/"
+      "include": "#block-comment"
     },
     {
       "name": "string.quoted.single.ahk",
