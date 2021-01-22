@@ -98,5 +98,9 @@
   "#MenuMaskKey": {
     "prefix": "#MenuMaskKey",
     "body": "#MenuMaskKey ${1:KeyName}"
+  },
+  "#Hotstring": {
+    "prefix": "#Hotstring",
+    "body": "#Hotstring ${1:Options...}"
   }
 }
