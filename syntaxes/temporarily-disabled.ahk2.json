@@ -1,0 +1,127 @@
+{
+  "directives": [
+    {
+      "name": "directive.boolean.ahk",
+      "match": "(#(?i:maxthreadsbuffer|usehook))\\s+((?i:true|false)|([01]))?",
+      "captures": {
+        "1": {
+          "name": "keyword.other.directive.ahk"
+        },
+        "2": {
+          "name": "constant.language.boolean.ahk"
+        },
+        "3": {
+          "name": "constant.numeric.boolean-substitue.ahk"
+        }
+      }
+    },
+    {
+      "name": "directive.string.ahk",
+      "match": "(#(?i:dllload|include|includeagain))\\s+(\".*?\")?",
+      "captures": {
+        "1": {
+          "name": "keyword.other.directive.ahk"
+        },
+        "2": {
+          "name": "string.quoted.ahk"
+        }
+      }
+    },
+    {
+      "name": "directive.single.ahk",
+      "match": "(#(?i:installkeybdhook|installmousehook|notrayicon|persistent|winactivateforce))",
+      "captures": {
+        "1": {
+          "name": "keyword.other.directive.ahk"
+        }
+      }
+    },
+    {
+      "name": "directive.custom.singleinstance.ahk",
+      "match": "(#(?i:singleinstance))\\s+((?i:force|prompt|ignore|off))?",
+      "captures": {
+        "1": {
+          "name": "keyword.other.directive.ahk"
+        },
+        "2": {
+          "name": "string.unquoted.directive.ahk"
+        }
+      }
+    },
+    {
+      "name": "directive.custom.errorstdout.ahk",
+      "todo": "support both \" and ' ",
+      "match": "(#(?i:errorstdout))\\s+(\"(?i:utf-8|utf-8-raw|utf-16|utf-16-raw|cp\\d{3})\")?",
+      "captures": {
+        "1": {
+          "name": "keyword.other.directive.ahk"
+        },
+        "2": {
+          "name": "string.quoted.other.directive.ahk"
+        }
+      }
+    },
+    {
+      "name": "directive.custom.requires.ahk",
+      "match": "(#(?i:requires))\\s+(AutoHotkey([\\s\\t](v?[12]\\d*(\\.\\d)?(\\.\\d)?(-(a\\d+)?(\\.\\d+)?)?))?)?",
+      "captures": {
+        "1": {
+          "name": "keyword.other.directive.ahk"
+        },
+        "2": {
+          "name": "string.unquoted.directive.ahk"
+        },
+        "4": {
+          "name": "variable.other.version.ahk"
+        }
+      }
+    },
+    {
+      "name": "directive.custom.hotif.ahk",
+      "match": "(#(?i:hotif))\\b",
+      "captures": {
+        "1": {
+          "name": "keyword.other.directive.ahk"
+        }
+      }
+    },
+    {
+      "name": "directive.numeric.ahk",
+      "match": "(#(?i:clipboardtimeout|hotiftimeout|hotkeyinterval|hotkeymodifiertimeout|inputlevel|keyhistory|maxhotkeysperinterval|maxthreads|maxthreadsperhotkey))\\s+(\\d+)?",
+      "captures": {
+        "1": {
+          "name": "keyword.other.directive.ahk"
+        },
+        "2": {
+          "name": "constant.numeric.directive.ahk"
+        }
+      }
+    }
+  ],
+  "escape": [
+    {
+      "match": "::\\s*(`\\{)",
+      "captures": {
+        "1": {
+          "name": "constant.character.escape.open-brace.ahk"
+        }
+      }
+    },
+    {
+      "match": "(`;)",
+      "captures": {
+        "1": {
+          "name": "constant.character.escape.ahk"
+        }
+      }
+    },
+    {
+      "match": "[^\\t ](`);",
+      "captures": {
+        "1": {
+          "name": "invalid.illegal.unecessary.ahk"
+        }
+      }
+    }
+  ]
+}
