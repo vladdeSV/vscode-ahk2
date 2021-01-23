@@ -131,6 +131,10 @@
     },
     {
       "include": "#built-in-magic-variables"
+    },
+    {
+      "name": "support.function.environment.ahk",
+      "match": "(?i:clipboardall|clipwait|envget|envset|onclipboardchange|sysget(ipaddresses)?)"
     }
   ]
 }
