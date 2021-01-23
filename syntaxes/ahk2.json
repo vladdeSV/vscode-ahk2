@@ -3,9 +3,9 @@
   "scopeName": "source.ahk2",
   "uuid": "76BDF974-5687-424E-BE8E-7D789DF50844",
   "repository": {
-    "escape-characters": {
+    "escape-character": {
       "name": "constant.character.escape.ahk",
-      "match": "`[\"`;:nrbtsvaf]"
+      "match": "`[\"`:nrbtsvaf]"
     },
     "block-comment": {
       "name": "comment.block.ahk",
@@ -36,7 +36,7 @@
       "end": "'|$",
       "patterns": [
         {
-          "include": "#escape-characters"
+          "include": "#escape-character"
         }
       ]
     },
@@ -46,7 +46,7 @@
       "end": "\"|$",
       "patterns": [
         {
-          "include": "#escape-characters"
+          "include": "#escape-character"
         }
       ]
     },
@@ -59,7 +59,15 @@
       }
     },
     {
-      "match": "[^ ](`);",
+      "match": "(`;)",
+      "captures": {
+        "1": {
+          "name": "constant.character.escape.ahk"
+        }
+      }
+    },
+    {
+      "match": "[^\\t ](`);",
       "captures": {
         "1": {
           "name": "invalid.illegal.unecessary.ahk"
