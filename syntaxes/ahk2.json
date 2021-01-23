@@ -100,7 +100,7 @@
     {
       "name": "string.quoted.single.ahk",
       "begin": "'",
-      "end": "'|$",
+      "end": "'",
       "patterns": [
         {
           "include": "#escape-character"
@@ -110,7 +110,7 @@
     {
       "name": "string.quoted.double.ahk",
       "begin": "\"",
-      "end": "\"|$",
+      "end": "\"",
       "patterns": [
         {
           "include": "#escape-character"
