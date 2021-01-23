@@ -39,6 +39,12 @@
         },
         {
           "include": "#built-in-operating-system-user-info"
+        },
+        {
+          "include": "#built-in-misc"
+        },
+        {
+          "include": "#built-in-loop"
         }
       ]
     },
@@ -69,6 +75,14 @@
     "built-in-operating-system-user-info": {
       "name": "keyword.other.operating-system-user-info.ahk",
       "match": "\\b(?i:a_(appdata(common)?|computername|comspec|desktop(common)?|is64bitos|isadmin|language|mydocuments|osversion|programfiles|programs(common)?|ptrsize|screendpi|screenheight|screenwidth|startmenu(common)?|startup(common)?|temp|username|windir))\\b"
+    },
+    "built-in-misc": {
+      "name": "keyword.other.misc.ahk",
+      "match": "\\b(?i:a_(clipboard|cursor|eventinfo|lasterror))\\b"
+    },
+    "built-in-loop": {
+      "name": "keyword.other.loop.ahk",
+      "match": "\\b(?i:a_(index|loop(file|reg|read)name|loopfield))\\b"
     }
   },
   "patterns": [
@@ -239,14 +253,6 @@
     {
       "name": "invalid.illegal.directive.unknown.ahk",
       "match": "#\\w+"
-    },
-    {
-      "name": "keyword.other.misc.ahk",
-      "match": "\\b(?i:a_(clipboard|cursor|eventinfo|lasterror))\\b"
-    },
-    {
-      "name": "keyword.other.loop.ahk",
-      "match": "\\b(?i:a_(index|loop(file|reg|read)name|loopfield))\\b"
     },
     {
       "include": "#built-in-magic-variables"
