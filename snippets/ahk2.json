@@ -102,5 +102,41 @@
   "#Hotstring": {
     "prefix": "#Hotstring",
     "body": "#Hotstring ${1:Options...}"
+  },
+  "ClipboardAll": {
+    "prefix": "ClipboardAll([Data: Object|Integer, Size: Integer])",
+    "body": "ClipboardAll($0)"
+  },
+  "ClipWait": {
+    "prefix": "ClipWait([TimeoutInSeconds: Integer, WaitForAnyData: Boolean]",
+    "body": "ClipWait($0)"
+  },
+  "EnvGet": {
+    "prefix": "EnvGet(EnvVarName: String)",
+    "body": "EnvGet(${1:\"ENV\"})"
+  },
+  "EnvSet": {
+    "prefix": "EnvSet(EnvVar: String, Value: String)",
+    "body": "EnvSet(${1:\"EnvVar\"}, ${2:\"Value\"})"
+  },
+  "EnvSet ": {
+    "prefix": "EnvSet EnvVar: String, Value: String",
+    "body": "EnvSet ${1:\"EnvVar\"}, ${2:\"Value\"}"
+  },
+  "OnClipboardChange": {
+    "prefix": "OnClipboardChange(Func: String|Object, [AddRemove: 0|1|-1])",
+    "body": "OnClipboardChange(${1:Func})"
+  },
+  "OnClipboardChange ": {
+    "prefix": "OnClipboardChange Func: String|Object, [AddRemove: 0|1|-1]",
+    "body": "OnClipboardChange ${1:Func}"
+  },
+  "SysGet": {
+    "prefix": "SysGet(Property: Integer)",
+    "body": "SysGet(${1:Property})"
+  },
+  "SysGetIPAdress": {
+    "prefix": "SysGetIPAddresses()",
+    "body": "SysGetIPAddresses()"
   }
 }
