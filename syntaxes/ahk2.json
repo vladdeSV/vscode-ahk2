@@ -133,10 +133,22 @@
       "include": "#built-in-magic-variables"
     },
     {
-      "match": "^(.*)::",
+      "match": "(?i:^\\s*([!#^+~]*)([a-z][\\w]*)((\\s*&\\s*)([!#^+~]*)([a-z][\\w]*)?)?)\\s*::",
       "captures": {
         "1": {
-          "name": "keyword.other.ahk"
+          "name": "keyword.other.modifier.ahk"
+        },
+        "2": {
+          "name": "keyword.other.key.ahk"
+        },
+        "4": {
+          "name": "keyword.other.ampersand.ahk"
+        },
+        "5": {
+          "name": "keyword.other.modifier.ahk"
+        },
+        "6": {
+          "name": "keyword.other.key.ahk"
         }
       }
     },
