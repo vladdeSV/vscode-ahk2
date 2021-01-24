@@ -133,6 +133,14 @@
       "include": "#built-in-magic-variables"
     },
     {
+      "match": "^(.*)::",
+      "captures": {
+        "1": {
+          "name": "keyword.other.ahk"
+        }
+      }
+    },
+    {
       "name": "support.function.environment.ahk",
       "match": "(?i:clipboardall|clipwait|envget|envset|onclipboardchange|sysget(ipaddresses)?)"
     }
