@@ -119,17 +119,9 @@
     "prefix": "EnvSet(EnvVar: String, Value: String)",
     "body": "EnvSet(${1:\"EnvVar\"}, ${2:\"Value\"})"
   },
-  "EnvSet ": {
-    "prefix": "EnvSet EnvVar: String, Value: String",
-    "body": "EnvSet ${1:\"EnvVar\"}, ${2:\"Value\"}"
-  },
   "OnClipboardChange": {
     "prefix": "OnClipboardChange(Func: String|Object, [AddRemove: 0|1|-1])",
     "body": "OnClipboardChange(${1:Func})"
-  },
-  "OnClipboardChange ": {
-    "prefix": "OnClipboardChange Func: String|Object, [AddRemove: 0|1|-1]",
-    "body": "OnClipboardChange ${1:Func}"
   },
   "SysGet": {
     "prefix": "SysGet(Property: Integer)",
