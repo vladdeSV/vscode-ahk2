@@ -153,6 +153,10 @@
       }
     },
     {
+      "name": "keyword.control.ahk",
+      "match": "\\b(?i:break|catch|continue|critical|else|exit|exitapp|finally|for|goto|if|onerror|onexit|pause|reload|return|settimer|sleep|suspend|switch|thread|try|until|while|loop( (read|parse))?)\\b"
+    },
+    {
       "name": "support.function.environment.ahk",
       "match": "(?i:clipboardall|clipwait|envget|envset|onclipboardchange|sysget(ipaddresses)?)"
     }
