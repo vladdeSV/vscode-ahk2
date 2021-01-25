@@ -97,31 +97,5 @@
         }
       }
     }
-  ],
-  "escape": [
-    {
-      "match": "::\\s*(`\\{)",
-      "captures": {
-        "1": {
-          "name": "constant.character.escape.open-brace.ahk"
-        }
-      }
-    },
-    {
-      "match": "(`;)",
-      "captures": {
-        "1": {
-          "name": "constant.character.escape.ahk"
-        }
-      }
-    },
-    {
-      "match": "[^\\t ](`);",
-      "captures": {
-        "1": {
-          "name": "invalid.illegal.unecessary.ahk"
-        }
-      }
-    }
   ]
 }

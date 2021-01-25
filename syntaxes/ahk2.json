@@ -95,6 +95,10 @@
       "match": "\\b\\d+\\b"
     },
     {
+      "name": "constant.language.boolean.ahk",
+      "match": "\\b(?i:true|false)\\b"
+    },
+    {
       "include": "#built-in-magic-variables"
     },
     {
@@ -119,7 +123,7 @@
     },
     {
       "name": "keyword.control.ahk",
-      "match": "\\b(?i:break|catch|continue|critical|else|exit|exitapp|finally|for|goto|if|onerror|onexit|pause|reload|return|settimer|sleep|suspend|switch|thread|try|until|while|loop( (read|parse))?)\\b"
+      "match": "\\b(?i:break|catch|continue|critical|else|exit|exitapp|finally|for|goto|if|onerror|onexit|pause|reload|return|settimer|sleep|suspend|switch|thread|try|until|while|loop( (read|parse))?|=>)\\b"
     },
     {
       "name": "support.function.window.ahk",
@@ -128,6 +132,75 @@
     {
       "name": "support.function.environment.ahk",
       "match": "\\b(?i:clipboardall|clipwait|envget|envset|onclipboardchange|sysget(ipaddresses)?)\\b"
+    },
+    {
+      "name": "meta.function",
+      "match": "(\\w+)\\(",
+      "captures": {
+        "1": {
+          "name": "support.function.misc.ahk"
+        }
+      }
+    },
+    {
+      "name": "meta.object-method",
+      "match": "(\\w+)\\.(\\w+)\\(",
+      "captures": {
+        "1": {
+          "name": "support.variable.object.ahk"
+        },
+        "2": {
+          "name": "support.function.method.ahk"
+        }
+      }
+    },
+    {
+      "name": "meta.object-variable",
+      "match": "(\\w+)\\.(\\w+)",
+      "captures": {
+        "1": {
+          "name": "support.variable.object.ahk"
+        },
+        "2": {
+          "name": "support.variable.ahk"
+        }
+      }
+    },
+    {
+      "name": "meta.object-variable",
+      "match": "(\\w+)\\.(%\\w+%)",
+      "captures": {
+        "1": {
+          "name": "support.variable.object.ahk"
+        },
+        "2": {
+          "name": "variable.other.ahk"
+        }
+      }
+    },
+    {
+      "match": "::\\s*(`\\{)",
+      "captures": {
+        "1": {
+          "name": "constant.character.escape.open-brace.ahk"
+        }
+      }
+    },
+    {
+      "match": "(`;)",
+      "captures": {
+        "1": {
+          "name": "constant.character.escape.ahk"
+        }
+      }
+    },
+    {
+      "match": "[^\\t ](`);",
+      "captures": {
+        "1": {
+          "name": "invalid.illegal.unecessary.ahk"
+        }
+      }
     }
   ]
 }
