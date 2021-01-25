@@ -7,16 +7,6 @@
       "name": "constant.character.escape.ahk",
       "match": "`[\"`:nrbtsvaf]"
     },
-    "block-comment": {
-      "name": "comment.block.ahk",
-      "begin": "\\/\\*",
-      "end": "\\*\\/$",
-      "patterns": [
-        {
-          "include": "#block-comment"
-        }
-      ]
-    },
     "built-in-magic-variables": {
       "patterns": [
         {
@@ -68,7 +58,9 @@
       }
     },
     {
-      "include": "#block-comment"
+      "name": "comment.block.ahk",
+      "begin": "\\/\\*",
+      "end": "\\*\\/$"
     },
     {
       "name": "string.quoted.single.ahk",
