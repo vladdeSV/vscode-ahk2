@@ -20,69 +20,42 @@
     "built-in-magic-variables": {
       "patterns": [
         {
-          "include": "#built-in-special-character"
+          "name": "keyword.other.special-character.ahk",
+          "match": "\\b(?i:a_(space|tab))\\b"
         },
         {
-          "include": "#built-in-script-properties"
+          "name": "keyword.other.script-properties.ahk",
+          "match": "\\b(?i:a_(args|workingdir|initialworkingdir|scriptdir|scriptname|scriptfullpath|scripthwnd|linenumber|linefile|thisfunc|ahkversion|ahkpath|iscompiled))\\b"
         },
         {
-          "include": "#built-in-date-time"
+          "name": "keyword.other.date-time.ahk",
+          "match": "\\b(?i:a_(yyyy|m{2,4}|d{2,4}|wday|yday|yweek|hour|min|sec|msec|now(utc)?|tickcount))\\b"
         },
         {
-          "include": "#built-in-script-settings"
+          "name": "keyword.other.script-settings.ahk",
+          "match": "\\b(?i:a_(allowmainwindow|controldelay|coordmode(tooltip|pixel|mouse|caret|menu)|defaultmousespeed|detecthidden(text|windows)|fileencoding|icon(hidden|tip|file|number)|is(critical|paused|suspended)|keydelay(play)?|keyduration(play)?|listlines|mousedelay(play)?|regview|send(level|mode)|storecapslockmode|titlematchmode(speed)?|traymenu|windelay))\\b"
         },
         {
-          "include": "#built-in-user-idle-time"
+          "name": "keyword.other.user-idle-time.ahk",
+          "match": "\\b(?i:a_(timeidle(physical|keyboard|mouse)?))\\b"
         },
         {
-          "include": "#built-in-hotkey-hotstring-custom-menu-item"
+          "name": "keyword.other.hotkey-hotstring-custom-menu-item.ahk",
+          "match": "\\b(?i:a_(thishotkey|priorhotkey|priorkey|timesincethishotkey|timesincepriorhotkey|endchar))\\b"
         },
         {
-          "include": "#built-in-operating-system-user-info"
+          "name": "keyword.other.operating-system-user-info.ahk",
+          "match": "\\b(?i:a_(appdata(common)?|computername|comspec|desktop(common)?|is64bitos|isadmin|language|mydocuments|osversion|programfiles|programs(common)?|ptrsize|screendpi|screenheight|screenwidth|startmenu(common)?|startup(common)?|temp|username|windir))\\b"
         },
         {
-          "include": "#built-in-misc"
+          "name": "keyword.other.misc.ahk",
+          "match": "\\b(?i:a_(clipboard|cursor|eventinfo|lasterror))\\b"
         },
         {
-          "include": "#built-in-loop"
+          "name": "keyword.other.loop.ahk",
+          "match": "\\b(?i:a_(index|loop(file|reg|read)name|loopfield))\\b"
         }
       ]
-    },
-    "built-in-special-character": {
-      "name": "keyword.other.special-character.ahk",
-      "match": "\\b(?i:a_(space|tab))\\b"
-    },
-    "built-in-script-properties": {
-      "name": "keyword.other.script-properties.ahk",
-      "match": "\\b(?i:a_(args|workingdir|initialworkingdir|scriptdir|scriptname|scriptfullpath|scripthwnd|linenumber|linefile|thisfunc|ahkversion|ahkpath|iscompiled))\\b"
-    },
-    "built-in-date-time": {
-      "name": "keyword.other.date-time.ahk",
-      "match": "\\b(?i:a_(yyyy|m{2,4}|d{2,4}|wday|yday|yweek|hour|min|sec|msec|now(utc)?|tickcount))\\b"
-    },
-    "built-in-script-settings": {
-      "name": "keyword.other.script-settings.ahk",
-      "match": "\\b(?i:a_(allowmainwindow|controldelay|coordmode(tooltip|pixel|mouse|caret|menu)|defaultmousespeed|detecthidden(text|windows)|fileencoding|icon(hidden|tip|file|number)|is(critical|paused|suspended)|keydelay(play)?|keyduration(play)?|listlines|mousedelay(play)?|regview|send(level|mode)|storecapslockmode|titlematchmode(speed)?|traymenu|windelay))\\b"
-    },
-    "built-in-user-idle-time": {
-      "name": "keyword.other.user-idle-time.ahk",
-      "match": "\\b(?i:a_(timeidle(physical|keyboard|mouse)?))\\b"
-    },
-    "built-in-hotkey-hotstring-custom-menu-item": {
-      "name": "keyword.other.hotkey-hotstring-custom-menu-item.ahk",
-      "match": "\\b(?i:a_(thishotkey|priorhotkey|priorkey|timesincethishotkey|timesincepriorhotkey|endchar))\\b"
-    },
-    "built-in-operating-system-user-info": {
-      "name": "keyword.other.operating-system-user-info.ahk",
-      "match": "\\b(?i:a_(appdata(common)?|computername|comspec|desktop(common)?|is64bitos|isadmin|language|mydocuments|osversion|programfiles|programs(common)?|ptrsize|screendpi|screenheight|screenwidth|startmenu(common)?|startup(common)?|temp|username|windir))\\b"
-    },
-    "built-in-misc": {
-      "name": "keyword.other.misc.ahk",
-      "match": "\\b(?i:a_(clipboard|cursor|eventinfo|lasterror))\\b"
-    },
-    "built-in-loop": {
-      "name": "keyword.other.loop.ahk",
-      "match": "\\b(?i:a_(index|loop(file|reg|read)name|loopfield))\\b"
     }
   },
   "patterns": [
