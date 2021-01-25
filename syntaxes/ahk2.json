@@ -9,8 +9,8 @@
     },
     "block-comment": {
       "name": "comment.block.ahk",
-      "begin": "/\\*",
-      "end": "\\*/",
+      "begin": "\\/\\*",
+      "end": "\\*\\/$",
       "patterns": [
         {
           "include": "#block-comment"
