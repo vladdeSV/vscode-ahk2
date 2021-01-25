@@ -99,9 +99,6 @@
       "match": "\\b(?i:true|false)\\b"
     },
     {
-      "include": "#built-in-magic-variables"
-    },
-    {
       "match": "(?i:^\\s*([!#^+~]*)([a-z][\\w]*)((\\s*&\\s*)([!#^+~]*)([a-z][\\w]*)?)?)\\s*::",
       "captures": {
         "1": {
@@ -132,6 +129,9 @@
     {
       "name": "support.function.environment.ahk",
       "match": "\\b(?i:clipboardall|clipwait|envget|envset|onclipboardchange|sysget(ipaddresses)?)\\b"
+    },
+    {
+      "include": "#built-in-magic-variables"
     },
     {
       "name": "meta.function",
