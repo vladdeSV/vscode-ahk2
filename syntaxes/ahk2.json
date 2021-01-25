@@ -131,6 +131,10 @@
       "match": "\\b(?i:clipboardall|clipwait|envget|envset|onclipboardchange|sysget(ipaddresses)?)\\b"
     },
     {
+      "name": "keyword.other.label.ahk",
+      "match": "^\\s*\\w+:"
+    },
+    {
       "include": "#built-in-magic-variables"
     },
     {
