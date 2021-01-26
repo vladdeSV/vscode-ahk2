@@ -183,28 +183,33 @@
       }
     },
     {
-      "match": "::\\s*(`\\{)",
-      "captures": {
-        "1": {
-          "name": "constant.character.escape.open-brace.ahk"
+      "name": "meta.escape-characters.ahk",
+      "patterns": [
+        {
+          "match": "::\\s*(`\\{)",
+          "captures": {
+            "1": {
+              "name": "constant.character.escape.open-brace.ahk"
+            }
+          }
+        },
+        {
+          "match": "(`;)",
+          "captures": {
+            "1": {
+              "name": "constant.character.escape.ahk"
+            }
+          }
+        },
+        {
+          "match": "[^\\t ](`);",
+          "captures": {
+            "1": {
+              "name": "invalid.illegal.unecessary.ahk"
+            }
+          }
         }
-      }
-    },
-    {
-      "match": "(`;)",
-      "captures": {
-        "1": {
-          "name": "constant.character.escape.ahk"
-        }
-      }
-    },
-    {
-      "match": "[^\\t ](`);",
-      "captures": {
-        "1": {
-          "name": "invalid.illegal.unecessary.ahk"
-        }
-      }
+      ]
     },
     {
       "name": "meta.directives.ahk",
