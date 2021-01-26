@@ -1,0 +1,26 @@
+#ErrorStdOut (UTF-8|UTF-8-RAW|UTF-16|UTF-16-RAW|CP\\d{3})
+#SingleInstance (Force|Ignore|Prompt|Off)
+#Requires AutoHotkey
+#DllLoad string
+#Include string
+#IncludeAgain string
+#InstallKeybdHook
+#InstallMouseHook
+#NoTrayIcon
+#Persistent
+#WinActivateForce
+#HotIf
+#MaxThreadsBuffer boolean
+#UseHook boolean
+#ClipboardTimeout integer
+#HotIfTimeout integer
+#HotkeyInterval integer
+#HotkeyModifierTimeout integer
+#InputLevel integer
+#KeyHistory integer
+#MaxHotkeysPerInterval integer
+#MaxThreads integer
+#MaxThreadsPerHotkey integer
+#Hotstring todo
+#MenuMaskKey todo
+#Warn todo
