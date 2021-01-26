@@ -205,6 +205,55 @@
           "name": "invalid.illegal.unecessary.ahk"
         }
       }
+    },
+    {
+      "name": "keyword.other.directive.boolean.ahk",
+      "match": "#(?i:maxthreadsbuffer|usehook)"
+    },
+    {
+      "name": "keyword.other.directive.boolean.ahk",
+      "match": "#(?i:dllload|include|includeagain)"
+    },
+    {
+      "name": "keyword.other.directive.single.ahk",
+      "match": "#(?i:installkeybdhook|installmousehook|notrayicon|persistent|winactivateforce)"
+    },
+    {
+      "name": "keyword.other.directive.custom.errorstdout.ahk",
+      "match": "#(?i:errorstdout)"
+    },
+    {
+      "name": "keyword.other.directive.custom.hotif.ahk",
+      "match": "#(?i:hotif)\\b"
+    },
+    {
+      "name": "keyword.other.directive.numeric.ahk",
+      "match": "#(?i:clipboardtimeout|hotiftimeout|hotkeyinterval|hotkeymodifiertimeout|inputlevel|keyhistory|maxhotkeysperinterval|maxthreads|maxthreadsperhotkey)"
+    },
+    {
+      "match": "(#(?i:singleinstance))\\s+((?i:force|prompt|ignore|off))?",
+      "captures": {
+        "1": {
+          "name": "keyword.other.directive.custom.singleinstance.ahk"
+        },
+        "2": {
+          "name": "string.unquoted.directive.ahk"
+        }
+      }
+    },
+    {
+      "match": "(#(?i:requires))\\s+(AutoHotkey([\\s\\t](v?[12]\\d*(\\.\\d)?(\\.\\d)?(-(a\\d+)?(\\.\\d+)?)?))?)?",
+      "captures": {
+        "1": {
+          "name": "keyword.other.directive.custom.requires.ahk"
+        },
+        "2": {
+          "name": "string.unquoted.directive.ahk"
+        },
+        "4": {
+          "name": "variable.other.version.ahk"
+        }
+      }
     }
   ]
 }
