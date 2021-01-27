@@ -76,6 +76,50 @@
         {
           "name": "support.function.drive.ahk",
           "match": "\\b(?i:driveeject|drivegetcapacity|drivegetfilesystem|drivegetlabel|drivegetlist|drivegetserial|drivegetspacefree|drivegetstatus(cd)?|drivegettype|drivelock|drivesetlabel|driveunlock)\\b"
+        },
+        {
+          "name": "support.function.string.ahk",
+          "match": "\\b(?i:chr|format(time)?|instr|ord|regex(match|replace)|sort|str(compare|get|ing|len|lower|put|replace|split|upper)|substr|trim|varsetstrcapacity)\\b"
+        },
+        {
+          "name": "support.function.sound.ahk",
+          "match": "\\b(?i:sound(beep|play)|soundget(interface|mute|name|volume)|soundset(mute|volume))\\b"
+        },
+        {
+          "name": "support.function.screen.ahk",
+          "match": "\\b(?i:imagesearch|pixelgetcolor|pixelsearch)\\b"
+        },
+        {
+          "name": "support.function.registry.ahk",
+          "match": "\\b(?i:reg(read|write|delete(key)?)|setregview)\\b"
+        },
+        {
+          "name": "support.function.process.ahk",
+          "match": "\\b(?i:process(close|exist|setpriority|wait(close)?)|run(wait|as)?|shutdown)\\b"
+        },
+        {
+          "name": "support.function.misc.ahk",
+          "match": "\\b(?i:download|edit|func|getmethod|has(base|method|prop)|is(alnum|alpha|byref|digit|float|func|integer|label|lower|number|object|set|space|time|upper|xdigit)|list(lines|vars)|outputdebug)\\b"
+        },
+        {
+          "name": "support.function.mouse-keyboard.ahk",
+          "match": "\\b(?i:hotkey|hotstring|listhotkeys|blockinput|caretfound|click|control(click|send(text)?)|coordmode|getkey(name|sc|state|vk)|key(history|wait)|inputhook|mouse(click(drag)?|getpos|move)|send(text|input|play|event|level|mode)?|set(caps|num|scroll)lockstate|setdefaultmousespeed|set(key|mouse)delay|setstorecapslockmode)\\b"
+        },
+        {
+          "name": "support.function.monitor.ahk",
+          "match": "\\b(?i:monitorget(count|name|primary|workarea)?)\\b"
+        },
+        {
+          "name": "support.function.math.ahk",
+          "match": "\\b(?i:abs|ceil|exp|floor|log|ln|max|min|mod|round|sqrt|sin|cos|tan|asin|acos|atan)\\b"
+        },
+        {
+          "name": "support.function.file-directory.ahk",
+          "match": "\\b(?i:dir(copy|create|delete|exist|move|select)|file(append|copy|createshortcut|delete|encoding|exist|get(attrib|shortcut|size|time|version)|install|move|open|read|recycle|recycle(empty)?|select|set(attrib|time))|ini(write|read|delete)|setworkingdir|splitpath)\\b"
+        },
+        {
+          "name": "support.function.external-library.ahk",
+          "match": "\\b(?i:bufferalloc|callbackcreate|comcall|comobj(active|array|connect|create|flags|get|query|type|value)|comobject|dllcall|num(get|put)|obj(addref|release)|strptr)\\b"
         }
       ]
     },
