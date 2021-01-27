@@ -235,7 +235,7 @@
       }
     },
     {
-      "name": "escape-characters",
+      "description": "escape-character",
       "patterns": [
         {
           "match": "::\\s*(`\\{)",
@@ -264,7 +264,7 @@
       ]
     },
     {
-      "name": "meta.directives.ahk",
+      "description": "directive",
       "patterns": [
         {
           "name": "keyword.other.directive.ahk",
