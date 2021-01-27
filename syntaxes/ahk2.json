@@ -241,7 +241,7 @@
         },
         {
           "name": "keyword.other.directive.numeric.ahk",
-          "match": "#(?i:clipboardtimeout|hotiftimeout|hotkeyinterval|hotkeymodifiertimeout|inputlevel|keyhistory|maxhotkeysperinterval|maxthreads|maxthreadsperhotkey)"
+          "match": "#(?i:clipboardtimeout|hotiftimeout|hotkeyinterval|hotkeymodifiertimeout|inputlevel|keyhistory|maxhotkeysperinterval|maxthreads(perhotkey)?)"
         },
         {
           "name": "keyword.other.directive.custom.hotif.ahk",
