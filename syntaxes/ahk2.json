@@ -10,45 +10,35 @@
   },
   "patterns": [
     {
-      "description": "comments",
+      "match": "(^|[ \\t])(;.*)",
+      "captures": {
+        "2": {
+          "name": "comment.line.character.semicolon.ahk"
+        }
+      }
+    },
+    {
+      "name": "comment.block.ahk",
+      "begin": "\\/\\*",
+      "end": "\\*\\/$"
+    },
+    {
+      "name": "string.quoted.single.ahk",
+      "begin": "'",
+      "end": "'",
       "patterns": [
         {
-          "match": "(^|[ \\t])(;.*)",
-          "captures": {
-            "2": {
-              "name": "comment.line.character.semicolon.ahk"
-            }
-          }
-        },
-        {
-          "name": "comment.block.ahk",
-          "begin": "\\/\\*",
-          "end": "\\*\\/$"
+          "include": "#escape-character"
         }
       ]
     },
     {
-      "description": "strings",
+      "name": "string.quoted.double.ahk",
+      "begin": "\"",
+      "end": "\"",
       "patterns": [
         {
-          "name": "string.quoted.single.ahk",
-          "begin": "'",
-          "end": "'",
-          "patterns": [
-            {
-              "include": "#escape-character"
-            }
-          ]
-        },
-        {
-          "name": "string.quoted.double.ahk",
-          "begin": "\"",
-          "end": "\"",
-          "patterns": [
-            {
-              "include": "#escape-character"
-            }
-          ]
+          "include": "#escape-character"
         }
       ]
     },
