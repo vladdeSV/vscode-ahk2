@@ -80,14 +80,14 @@
           "match": "\\b(?i:winactivate(bottom)?|winactive|winclose|winexist|wingetclass|wingetclientpos|wingetcontrols(hwnd)?|wingetcount|wingetexstyle|wingetid|wingetid(last)?|wingetlist|wingetminmax|wingetpid|wingetpos|wingetprocessname|wingetprocesspath|wingetstyle|wingettext|wingettitle|wingettranscolor|wingettransparent|winhide|winkill|winminimize(all(undo)?)?|winmove|winmove(bottom)?|winmove(top)?|winredraw|winrestore|winsetalwaysontop|winsetenabled|winsetexstyle|winsetregion|winsetstyle|winsettitle|winsettranscolor|winsettransparent|winshow|winwait(active|close|notactive)?)\\b"
         },
         {
+          "name": "support.function.environment.ahk",
+          "match": "\\b(?i:clipboardall|clipwait|envget|envset|onclipboardchange|sysget(ipaddresses)?)\\b"
+        },
+        {
           "name": "support.function.drive.ahk",
           "match": "\\b(?i:driveeject|drivegetcapacity|drivegetfilesystem|drivegetlabel|drivegetlist|drivegetserial|drivegetspacefree|drivegetstatus(cd)?|drivegettype|drivelock|drivesetlabel|driveunlock)\\b"
         }
       ]
-    },
-    {
-      "name": "support.function.environment.ahk",
-      "match": "\\b(?i:clipboardall|clipwait|envget|envset|onclipboardchange|sysget(ipaddresses)?)\\b"
     },
     {
       "name": "keyword.other.label.ahk",
