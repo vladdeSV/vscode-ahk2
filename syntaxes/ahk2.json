@@ -317,7 +317,7 @@
           }
         },
         {
-          "match": "(#(?i:singleinstance))\\s+((?i:force|prompt|ignore|off))?",
+          "match": "(?i:(#singleinstance)(?:\\s+(force|prompt|ignore|off)?))",
           "captures": {
             "1": {
               "name": "keyword.other.directive.custom.singleinstance.ahk"
