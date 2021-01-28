@@ -212,12 +212,9 @@
     },
     {
       "name": "meta.object-variable",
-      "match": "(\\w+)\\.(\\w+)",
+      "match": "\\w+\\.(\\w+)",
       "captures": {
         "1": {
-          "name": "support.variable.object.ahk"
-        },
-        "2": {
           "name": "support.variable.ahk"
         }
       }
