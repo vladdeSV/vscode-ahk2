@@ -306,7 +306,7 @@
           }
         },
         {
-          "match": "(?i:(#menumaskkey)(?:\\s+((vk[\\da-f]{2})?(sc[\\da-f]{3})?)))?",
+          "match": "(?i:(#menumaskkey)(?:\\s+((vk[\\da-f]{2})?(sc[\\da-f]{3})?)))",
           "captures": {
             "1": {
               "name": "keyword.other.directive.custom.menumaskkey.ahk"
