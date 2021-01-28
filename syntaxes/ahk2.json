@@ -60,14 +60,18 @@
     },
     {
       "name": "keyword.control.ahk",
-      "match": "\\b(?i:break|catch|continue|critical|else|exit|exitapp|finally|for|goto|if|onerror|onexit|pause|reload|return|settimer|sleep|suspend|switch|thread|try|until|while|loop( (read|parse))?|=>)\\b"
+      "match": "\\b(?i:break|catch|continue|critical|else|exit|exitapp|finally|for|goto|if|onerror|onexit|pause|reload|return|settimer|sleep|suspend|switch|thread|throw|try|until|while|loop(?: (?:read|parse|reg|files))?|=>)\\b"
     },
     {
       "description": "functions",
       "patterns": [
         {
+          "name": "support.function.uncategorized.ahk",
+          "match": "(?i:type)"
+        },
+        {
           "name": "support.function.window.ahk",
-          "match": "\\b(?i:winactivate(bottom)?|winactive|winclose|winexist|wingetclass|wingetclientpos|wingetcontrols(hwnd)?|wingetcount|wingetexstyle|wingetid|wingetid(last)?|wingetlist|wingetminmax|wingetpid|wingetpos|wingetprocessname|wingetprocesspath|wingetstyle|wingettext|wingettitle|wingettranscolor|wingettransparent|winhide|winkill|winminimize(all(undo)?)?|winmove|winmove(bottom)?|winmove(top)?|winredraw|winrestore|winsetalwaysontop|winsetenabled|winsetexstyle|winsetregion|winsetstyle|winsettitle|winsettranscolor|winsettransparent|winshow|winwait(active|close|notactive)?)\\b"
+          "match": "\\b(?i:winactivate(bottom)?|winactive|winclose|winexist|wingetclass|wingetclientpos|wingetcontrols(hwnd)?|wingetcount|wingetexstyle|wingetid|wingetid(last)?|wingetlist|wingetminmax|wingetpid|wingetpos|wingetprocessname|wingetprocesspath|wingetstyle|wingettext|wingettitle|wingettranscolor|wingettransparent|winhide|winkill|win(maximize|minimize(all(undo)?)?)|winmove|winmove(bottom)?|winmove(top)?|winredraw|winrestore|winsetalwaysontop|winsetenabled|winsetexstyle|winsetregion|winsetstyle|winsettitle|winsettranscolor|winsettransparent|winshow|winwait(active|close|notactive)?)\\b"
         },
         {
           "name": "support.function.environment.ahk",
@@ -79,7 +83,7 @@
         },
         {
           "name": "support.function.string.ahk",
-          "match": "\\b(?i:chr|format(time)?|instr|ord|regex(match|replace)|sort|str(compare|get|ing|len|lower|put|replace|split|upper)|substr|trim|varsetstrcapacity)\\b"
+          "match": "\\b(?i:chr|format(time)?|instr|ord|regex(match|replace)|sort|str(compare|get|ing|len|lower|put|replace|split|upper)|substr|[lr]?trim|varsetstrcapacity)\\b"
         },
         {
           "name": "support.function.sound.ahk",
@@ -103,7 +107,7 @@
         },
         {
           "name": "support.function.mouse-keyboard.ahk",
-          "match": "\\b(?i:hotkey|hotstring|listhotkeys|blockinput|caretfound|click|control(click|send(text)?)|coordmode|getkey(name|sc|state|vk)|key(history|wait)|inputhook|mouse(click(drag)?|getpos|move)|send(text|input|play|event|level|mode)?|set(caps|num|scroll)lockstate|setdefaultmousespeed|set(key|mouse)delay|setstorecapslockmode)\\b"
+          "match": "\\b(?i:hotkey|hotstring|listhotkeys|blockinput|caretgetpos|click|control(click|send(text)?)|coordmode|getkey(name|sc|state|vk)|key(history|wait)|inputhook|mouse(click(drag)?|getpos|move)|send(text|input|play|event|level|mode)?|set(caps|num|scroll)lockstate|setdefaultmousespeed|set(key|mouse)delay|setstorecapslockmode)\\b"
         },
         {
           "name": "support.function.monitor.ahk",
@@ -111,7 +115,7 @@
         },
         {
           "name": "support.function.math.ahk",
-          "match": "\\b(?i:abs|ceil|exp|floor|log|ln|max|min|mod|round|sqrt|sin|cos|tan|asin|acos|atan)\\b"
+          "match": "\\b(?i:abs|ceil|date(add|diff)|exp|float|floor|integer|log|ln|max|min|mod|random(seed)?|round|sqrt|sin|cos|tan|asin|acos|atan)\\b"
         },
         {
           "name": "support.function.file-directory.ahk",
@@ -119,7 +123,7 @@
         },
         {
           "name": "support.function.external-library.ahk",
-          "match": "\\b(?i:bufferalloc|callbackcreate|comcall|comobj(active|array|connect|create|flags|get|query|type|value)|comobject|dllcall|num(get|put)|obj(addref|release)|strptr)\\b"
+          "match": "\\b(?i:bufferalloc|callback(create|free)|comcall|comobj(active|array|connect|create|flags|get|query|type|value)|comobject|dllcall|num(get|put)|obj(addref|release)|strptr)\\b"
         }
       ]
     },
@@ -273,7 +277,7 @@
         },
         {
           "name": "keyword.other.directive.boolean.ahk",
-          "match": "#(?i:dllload|include(again)?)"
+          "match": "#(?i:dllload|include(again)?|suspendexempt)"
         },
         {
           "name": "keyword.other.directive.custom.errorstdout.ahk",
