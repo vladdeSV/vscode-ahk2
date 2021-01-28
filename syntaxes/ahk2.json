@@ -295,8 +295,18 @@
           "match": "#(?i:hotstring)\\b"
         },
         {
-          "name": "keyword.other.directive.custom.warn.ahk",
-          "match": "#(?i:warn)\\b"
+          "match": "(?i:(#warn)(?:\\s+(useunsetlocal|useunsetglobal|varunset|localsameasglobal|unreachable|all)(?:\\s*,\\s*(msgbox|stdout|outputdebug|off)?)?)?)\\b",
+          "captures": {
+            "1": {
+              "name": "keyword.other.directive.custom.warn.ahk"
+            },
+            "2": {
+              "name": "string.unquoted.directive.ahk"
+            },
+            "3": {
+              "name": "string.unquoted.directive.ahk"
+            }
+          }
         },
         {
           "name": "keyword.other.directive.custom.menumaskkey.ahk",
