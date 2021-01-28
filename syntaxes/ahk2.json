@@ -309,8 +309,15 @@
           }
         },
         {
-          "name": "keyword.other.directive.custom.menumaskkey.ahk",
-          "match": "#(?i:menumaskkey)\\b"
+          "match": "(?i:(#menumaskkey)(?:\\s+((vk[\\da-f]{2})?(sc[\\da-f]{3})?)))?",
+          "captures": {
+            "1": {
+              "name": "keyword.other.directive.custom.menumaskkey.ahk"
+            },
+            "2": {
+              "name": "string.unquoted.directive.ahk"
+            }
+          }
         },
         {
           "match": "(#(?i:singleinstance))\\s+((?i:force|prompt|ignore|off))?",
