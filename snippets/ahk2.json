@@ -1,11 +1,11 @@
 {
   "#ErrorStdOut": {
     "prefix": "#ErrorStdOut",
-    "body": "#ErrorStdOut \"${1:UTF-8|UTF-8-RAW|UTF-16|UTF-16-RAW|CPnnn}\""
+    "body": "#ErrorStdOut \"${1|UTF-8,UTF-8-RAW,UTF-16,UTF-16-RAW,CPnnn|}\""
   },
   "#SingleInstance": {
     "prefix": "#SingleInstance",
-    "body": "#SingleInstance ${1:Force|Ignore|Prompt|Off}"
+    "body": "#SingleInstance ${1|Force,Ignore,Prompt,Off|}"
   },
   "#Requires": {
     "prefix": "#Requires",
@@ -49,11 +49,11 @@
   },
   "#MaxThreadsBuffer": {
     "prefix": "#MaxThreadsBuffer",
-    "body": "#MaxThreadsBuffer ${1:False}"
+    "body": "#MaxThreadsBuffer ${1|False,True|}"
   },
   "#UseHook": {
     "prefix": "#UseHook",
-    "body": "#UseHook ${1:True|False}"
+    "body": "#UseHook ${1|True,False|}"
   },
   "#ClipboardTimeout": {
     "prefix": "#ClipboardTimeout",
@@ -92,8 +92,8 @@
     "body": "#MaxThreadsPerHotkey ${1:Number (max:255)}"
   },
   "#Warn": {
-    "prefix": "#Warn",
-    "body": "#Warn${1: ${2:UseUnsetLocal|UseUnsetGlobal|VarUnset|LocalSameAsGlobal|Unreachable|All}, ${3:MsgBox|StdOut|OutputDebug|Off}}"
+    "prefix": "#Warn [WarningType: UseUnsetLocal|UseUnsetGlobal|VarUnset|LocalSameAsGlobal|Unreachable|All, WarningMode: MsgBox|StdOut|OutputDebug|Off]",
+    "body": "#Warn"
   },
   "#MenuMaskKey": {
     "prefix": "#MenuMaskKey",
@@ -113,7 +113,7 @@
   },
   "EnvGet": {
     "prefix": "EnvGet(EnvVarName: String)",
-    "body": "EnvGet(${1:\"ENV\"})"
+    "body": "EnvGet(${1:\"EnvVarName\"})"
   },
   "EnvSet": {
     "prefix": "EnvSet(EnvVar: String, Value: String)",
