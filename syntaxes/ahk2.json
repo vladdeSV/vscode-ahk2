@@ -3,16 +3,42 @@
   "scopeName": "source.ahk2",
   "uuid": "76BDF974-5687-424E-BE8E-7D789DF50844",
   "repository": {
-    "escape-character": {
+    "string-escape-character": {
       "name": "constant.character.escape.ahk",
       "match": "`[\"`:nrbtsvaf]"
     }
   },
   "patterns": [
     {
-      "match": "(^|[ \\t])(;.*)",
+      "name": "meta.method-call.ahk",
+      "match": "(\\w+)(?=\\()",
       "captures": {
-        "2": {
+        "1": {
+          "name": "entity.name.function.ahk"
+        }
+      }
+    },
+    {
+      "name": "meta.variable.object.ahk",
+      "match": "(?<=\\w+\\.)(\\w+)(?=\\s)",
+      "captures": {
+        "1": {
+          "name": "variable.other.ahk"
+        }
+      }
+    },
+    {
+      "match": "(%\\w+%)",
+      "captures": {
+        "1": {
+          "name": "variable.other.dynamic.ahk"
+        }
+      }
+    },
+    {
+      "match": "(?<=^|[ \\t])(;.*)",
+      "captures": {
+        "1": {
           "name": "comment.line.character.semicolon.ahk"
         }
       }
@@ -28,7 +54,7 @@
       "end": "'",
       "patterns": [
         {
-          "include": "#escape-character"
+          "include": "#string-escape-character"
         }
       ]
     },
@@ -38,36 +64,95 @@
       "end": "\"",
       "patterns": [
         {
-          "include": "#escape-character"
+          "include": "#string-escape-character"
         }
       ]
     },
     {
-      "name": "constant.numeric.hexadecimal.ahk",
-      "match": "\\b(?i:0x[\\da-f]+)\\b"
+      "description": "language",
+      "patterns": [
+        {
+          "name": "constant.numeric.hexadecimal.ahk",
+          "match": "\\b(?i:0x[\\da-f]+)\\b"
+        },
+        {
+          "name": "constant.numeric.scientific.ahk",
+          "match": "\\b\\d+[Ee][-+]?\\d+\\b"
+        },
+        {
+          "name": "constant.numeric.integer.ahk",
+          "match": "\\b\\d+\\b"
+        },
+        {
+          "name": "constant.language.boolean.ahk",
+          "match": "\\b(?i:true|false)\\b"
+        },
+        {
+          "name": "keyword.control.ahk",
+          "match": "\\b(?i:break|catch|continue|critical|else|exit|exitapp|finally|for|goto|if|onerror|onexit|pause|reload|return|settimer|sleep|suspend|switch|thread|throw|try|until|while|loop(?: (?:read|parse|reg|files))?|=>)\\b"
+        }
+      ]
     },
     {
-      "name": "constant.numeric.scientific.ahk",
-      "match": "\\b\\d+[Ee][-+]?\\d+\\b"
+      "name": "keyword.other.label.ahk",
+      "match": "^\\s*\\w+:(?=\\s)"
     },
     {
-      "name": "constant.numeric.integer.ahk",
-      "match": "\\b\\d+\\b"
+      "name": "meta.hotkey.ahk",
+      "match": "(?i:^\\s*([!#^+~]*)([a-z][\\w]*)((\\s*&\\s*)([!#^+~]*)([a-z][\\w]*)?)?)\\s*(?=::)",
+      "captures": {
+        "1": {
+          "name": "keyword.other.modifier.ahk"
+        },
+        "2": {
+          "name": "keyword.other.key.ahk"
+        },
+        "4": {
+          "name": "keyword.other.ampersand.ahk"
+        },
+        "5": {
+          "name": "keyword.other.modifier.ahk"
+        },
+        "6": {
+          "name": "keyword.other.key.ahk"
+        }
+      }
     },
     {
-      "name": "constant.language.boolean.ahk",
-      "match": "\\b(?i:true|false)\\b"
-    },
-    {
-      "name": "keyword.control.ahk",
-      "match": "\\b(?i:break|catch|continue|critical|else|exit|exitapp|finally|for|goto|if|onerror|onexit|pause|reload|return|settimer|sleep|suspend|switch|thread|throw|try|until|while|loop(?: (?:read|parse|reg|files))?|=>)\\b"
+      "description": "escape-character",
+      "patterns": [
+        {
+          "match": "::\\s*(`\\{)",
+          "captures": {
+            "1": {
+              "name": "constant.character.escape.open-brace.ahk"
+            }
+          }
+        },
+        {
+          "match": "(`;)",
+          "captures": {
+            "1": {
+              "name": "constant.character.escape.ahk"
+            }
+          }
+        },
+        {
+          "match": "[^\\t ](`);",
+          "captures": {
+            "1": {
+              "name": "invalid.illegal.unecessary.ahk"
+            }
+          }
+        }
+      ]
     },
     {
       "description": "functions",
       "patterns": [
         {
           "name": "support.function.uncategorized.ahk",
-          "match": "(?i:type)"
+          "match": "\\b(?i:type)\\b"
         },
         {
           "name": "support.function.window.ahk",
@@ -128,10 +213,6 @@
       ]
     },
     {
-      "name": "keyword.other.label.ahk",
-      "match": "^\\s*\\w+:"
-    },
-    {
       "description": "magic-constant",
       "patterns": [
         {
@@ -169,98 +250,6 @@
         {
           "name": "keyword.other.loop.ahk",
           "match": "\\b(?i:a_(index|loop(file|reg|read)name|loopfield))\\b"
-        }
-      ]
-    },
-    {
-      "name": "meta.hotkey.ahk",
-      "match": "(?i:^\\s*([!#^+~]*)([a-z][\\w]*)((\\s*&\\s*)([!#^+~]*)([a-z][\\w]*)?)?)\\s*::",
-      "captures": {
-        "1": {
-          "name": "keyword.other.modifier.ahk"
-        },
-        "2": {
-          "name": "keyword.other.key.ahk"
-        },
-        "4": {
-          "name": "keyword.other.ampersand.ahk"
-        },
-        "5": {
-          "name": "keyword.other.modifier.ahk"
-        },
-        "6": {
-          "name": "keyword.other.key.ahk"
-        }
-      }
-    },
-    {
-      "name": "meta.function",
-      "match": "(\\w+)\\(",
-      "captures": {
-        "1": {
-          "name": "support.function.misc.ahk"
-        }
-      }
-    },
-    {
-      "name": "meta.object-method",
-      "match": "(\\w+)\\.(\\w+)\\(",
-      "captures": {
-        "1": {
-          "name": "support.variable.object.ahk"
-        },
-        "2": {
-          "name": "support.function.method.ahk"
-        }
-      }
-    },
-    {
-      "name": "meta.object-variable",
-      "match": "\\w+\\.(\\w+)",
-      "captures": {
-        "1": {
-          "name": "support.variable.ahk"
-        }
-      }
-    },
-    {
-      "name": "meta.object-variable",
-      "match": "(\\w+)\\.(%\\w+%)",
-      "captures": {
-        "1": {
-          "name": "support.variable.object.ahk"
-        },
-        "2": {
-          "name": "variable.other.ahk"
-        }
-      }
-    },
-    {
-      "description": "escape-character",
-      "patterns": [
-        {
-          "match": "::\\s*(`\\{)",
-          "captures": {
-            "1": {
-              "name": "constant.character.escape.open-brace.ahk"
-            }
-          }
-        },
-        {
-          "match": "(`;)",
-          "captures": {
-            "1": {
-              "name": "constant.character.escape.ahk"
-            }
-          }
-        },
-        {
-          "match": "[^\\t ](`);",
-          "captures": {
-            "1": {
-              "name": "invalid.illegal.unecessary.ahk"
-            }
-          }
         }
       ]
     },
