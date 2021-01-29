@@ -273,19 +273,19 @@
         },
         {
           "name": "keyword.other.directive.boolean.ahk",
-          "match": "#(?i:maxthreadsbuffer|usehook)"
+          "match": "#(?i:maxthreadsbuffer|usehook|suspendexempt)"
         },
         {
-          "name": "keyword.other.directive.boolean.ahk",
-          "match": "#(?i:dllload|include(again)?|suspendexempt)"
-        },
-        {
-          "name": "keyword.other.directive.custom.errorstdout.ahk",
-          "match": "#(?i:errorstdout)"
+          "name": "keyword.other.directive.string.ahk",
+          "match": "#(?i:dllload|include(again)?)"
         },
         {
           "name": "keyword.other.directive.numeric.ahk",
           "match": "#(?i:clipboardtimeout|hotiftimeout|hotkeyinterval|hotkeymodifiertimeout|inputlevel|keyhistory|maxhotkeysperinterval|maxthreads(perhotkey)?)"
+        },
+        {
+          "name": "keyword.other.directive.custom.errorstdout.ahk",
+          "match": "#(?i:errorstdout)"
         },
         {
           "name": "keyword.other.directive.custom.hotif.ahk",
