@@ -223,6 +223,23 @@
           "include": "#string-escape-character"
         }
       ]
+    },
+    "switch-values": {
+      "patterns": [
+        {
+          "include": "#string"
+        },
+        {
+          "include": "#parens"
+        },
+        {
+          "todo": "add variables, methods, functions, etc."
+        }
+      ]
+    },
+    "parens": {
+      "begin": "\\(",
+      "end": "\\)"
     }
   },
   "patterns": [
@@ -240,24 +257,31 @@
     },
     {
       "name": "meta.switch.ahk",
-      "begin": "(switch)\\b",
+      "begin": "(switch)(?!$)(?=\\s|\\()",
       "beginCaptures": {
         "1": {
           "name": "keyword.control.ahk"
         }
       },
-      "end": "(?=\\})",
+      "end": "\\}",
       "patterns": [
         {
           "name": "meta.switch.value.ahk",
           "begin": "\\G",
-          "end": "(?=\\{)",
+          "end": "(?=$|\\{)",
           "patterns": [
             {
-              "include": "#string"
+              "name": "meta.switch.value-in-parens.ahk",
+              "begin": "\\(",
+              "end": "\\)",
+              "patterns": [
+                {
+                  "include": "#switch-values"
+                }
+              ]
             },
             {
-              "todo": "add variables, methods, functions, etc."
+              "include": "#switch-values"
             }
           ]
         },
