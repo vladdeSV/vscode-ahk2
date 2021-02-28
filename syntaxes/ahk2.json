@@ -7,9 +7,7 @@
       "name": "constant.character.escape.ahk",
       "match": "`[\"`:nrbtsvaf]"
     },
-    "code-block": {
-      "begin": "\\{",
-      "end": "\\}",
+    "common": {
       "patterns": [
         {
           "include": "#line-comment"
@@ -21,16 +19,19 @@
           "include": "#directive"
         },
         {
-          "include": "#function"
-        },
-        {
           "include": "#code-block"
         },
         {
-          "include": "#string-single-quote"
-        },
+          "include": "#string"
+        }
+      ]
+    },
+    "code-block": {
+      "begin": "\\{",
+      "end": "\\}",
+      "patterns": [
         {
-          "include": "#string-double-quote"
+          "include": "#common"
         }
       ]
     },
@@ -193,6 +194,16 @@
         }
       ]
     },
+    "string": {
+      "patterns": [
+        {
+          "include": "#string-single-quote"
+        },
+        {
+          "include": "#string-double-quote"
+        }
+      ]
+    },
     "string-single-quote": {
       "name": "string.quoted.single.ahk",
       "begin": "'",
@@ -225,7 +236,64 @@
       "include": "#directive"
     },
     {
-      "include": "#code-block"
+      "include": "_#code-block"
+    },
+    {
+      "name": "meta.switch.ahk",
+      "begin": "(switch)\\b",
+      "beginCaptures": {
+        "1": {
+          "name": "keyword.control.ahk"
+        }
+      },
+      "end": "(?=\\})",
+      "patterns": [
+        {
+          "name": "meta.switch.value.ahk",
+          "begin": "\\G",
+          "end": "(?=\\{)",
+          "patterns": [
+            {
+              "include": "#string"
+            },
+            {
+              "todo": "add variables, methods, functions, etc."
+            }
+          ]
+        },
+        {
+          "name": "meta.switch.body.ahk",
+          "begin": "\\{",
+          "end": "\\}",
+          "patterns": [
+            {
+              "name": "meta.switch.body.default.ahk",
+              "begin": "(default):",
+              "beginCaptures": {
+                "1": {
+                  "name": "keyword.control.ahk"
+                }
+              },
+              "end": "(?=case|\\})",
+              "patterns": [
+                {
+                  "include": "#line-comment"
+                },
+                {
+                  "name": "test",
+                  "begin": "^\\s*",
+                  "end": "(?=case|\\})",
+                  "patterns": [
+                    {
+                      "include": "#common"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
     }
   ],
   "patterns.bak": [
