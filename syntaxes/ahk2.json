@@ -233,6 +233,9 @@
           "include": "#parens"
         },
         {
+          "include": "#number"
+        },
+        {
           "todo": "add variables, methods, functions, etc."
         }
       ]
@@ -240,6 +243,22 @@
     "parens": {
       "begin": "\\(",
       "end": "\\)"
+    },
+    "number": {
+      "patterns": [
+        {
+          "name": "constant.numeric.hexadecimal.ahk",
+          "match": "\\b(?i:0x[\\da-f]+)\\b"
+        },
+        {
+          "name": "constant.numeric.scientific.ahk",
+          "match": "\\b\\d+[Ee][-+]?\\d+\\b"
+        },
+        {
+          "name": "constant.numeric.integer.ahk",
+          "match": "\\b\\d+\\b"
+        }
+      ]
     }
   },
   "patterns": [
@@ -260,14 +279,14 @@
       "begin": "(switch)(?!$)(?=\\s|\\()",
       "beginCaptures": {
         "1": {
-          "name": "keyword.control.ahk"
+          "name": "keyword.control.switch.ahk"
         }
       },
       "end": "\\}",
       "patterns": [
         {
           "name": "meta.switch.value.ahk",
-          "begin": "\\G",
+          "begin": "\\G\\s*",
           "end": "(?=$|\\{)",
           "patterns": [
             {
@@ -291,11 +310,50 @@
           "end": "\\}",
           "patterns": [
             {
+              "name": "meta.switch.body.case.ahk",
+              "begin": "(case)",
+              "beginCaptures": {
+                "1": {
+                  "name": "keyword.control.switch.case.ahk"
+                }
+              },
+              "end": "(?=case|default|\\})",
+              "patterns": [
+                {
+                  "name": "meta.switch.body.case.value.ahk",
+                  "begin": "\\G\\s*",
+                  "end": ":",
+                  "patterns": [
+                    {
+                      "include": "#switch-values"
+                    }
+                  ]
+                },
+                {
+                  "patterns": [
+                    {
+                      "include": "#line-comment"
+                    },
+                    {
+                      "name": "test",
+                      "begin": "^\\s*",
+                      "end": "(?=case|\\})",
+                      "patterns": [
+                        {
+                          "include": "#common"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
               "name": "meta.switch.body.default.ahk",
               "begin": "(default):",
               "beginCaptures": {
                 "1": {
-                  "name": "keyword.control.ahk"
+                  "name": "keyword.control.switch.default.ahk"
                 }
               },
               "end": "(?=case|\\})",
@@ -372,16 +430,7 @@
       "description": "language",
       "patterns": [
         {
-          "name": "constant.numeric.hexadecimal.ahk",
-          "match": "\\b(?i:0x[\\da-f]+)\\b"
-        },
-        {
-          "name": "constant.numeric.scientific.ahk",
-          "match": "\\b\\d+[Ee][-+]?\\d+\\b"
-        },
-        {
-          "name": "constant.numeric.integer.ahk",
-          "match": "\\b\\d+\\b"
+          "include": "#number"
         },
         {
           "name": "constant.language.boolean.ahk",
