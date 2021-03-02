@@ -411,7 +411,6 @@
                       "include": "#line-comment"
                     },
                     {
-                      "name": "test",
                       "begin": "^\\s*",
                       "end": "(?=case|default:|\\})",
                       "patterns": [
@@ -438,7 +437,6 @@
                   "include": "#line-comment"
                 },
                 {
-                  "name": "test",
                   "begin": "^\\s*",
                   "end": "(?=case|\\})",
                   "patterns": [
