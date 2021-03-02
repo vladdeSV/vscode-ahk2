@@ -197,6 +197,9 @@
     "string": {
       "patterns": [
         {
+          "include": "#string-continuation-double-quote"
+        },
+        {
           "include": "#string-single-quote"
         },
         {
@@ -221,6 +224,26 @@
       "patterns": [
         {
           "include": "#string-escape-character"
+        }
+      ]
+    },
+    "string-continuation-double-quote": {
+      "name": "string.quoted.double.ahk",
+      "begin": "\"\\s*$",
+      "end": "(?<=\\)\\s*)\"",
+      "patterns": [
+        {
+          "name": "string.quoted.other.continuation.ahk",
+          "begin": "\\(",
+          "end": "\\)",
+          "patterns": [
+            {
+              "include": "#string-escape-character"
+            }
+          ]
+        },
+        {
+          "include": "#line-comment"
         }
       ]
     },
