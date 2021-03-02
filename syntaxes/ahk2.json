@@ -306,8 +306,8 @@
         },
         {
           "name": "meta.switch.body.ahk",
-          "begin": "\\{",
-          "end": "\\}",
+          "begin": "(?<=\\{)",
+          "end": "(?=\\})",
           "patterns": [
             {
               "name": "meta.switch.body.case.ahk",
