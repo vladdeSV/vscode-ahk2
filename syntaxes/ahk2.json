@@ -279,12 +279,51 @@
           "include": "#number"
         },
         {
-          "name": "keyword.operator.locigal.ahk",
-          "match": "(&&|\\|\\|)"
+          "include": "#keyword"
+        }
+      ]
+    },
+    "keyword": {
+      "patterns": [
+        {
+          "name": "keyword.operator.++--.ahk",
+          "match": "\\+\\+|\\-\\-"
         },
         {
           "name": "keyword.operator.math.ahk",
-          "match": "\\+|-|\\/|%|\\*"
+          "match": "\\+|-|\\/{1,2}|%|\\*{1,2}"
+        },
+        {
+          "name": "keyword.operator.bitwise.ahk",
+          "match": "~|<<|>>|&|\\^|\\|"
+        },
+        {
+          "name": "keyword.operator.logical.ahk",
+          "match": "(?i:&&|\\|\\||!|NOT|AND|OR)"
+        },
+        {
+          "name": "keyword.operator.regex-match.ahk",
+          "match": "~="
+        },
+        {
+          "name": "keyword.operator.assignment.ahk",
+          "match": "(?::|\\+|-|\\*|\\/{1,2}|\\.|\\||&|\\^|>>|<<)="
+        },
+        {
+          "name": "keyword.operator.comparison.ahk",
+          "match": ">=?|<=?|!={1,2}|={1,2}"
+        },
+        {
+          "name": "keyword.operator.object-comparison.ahk",
+          "match": "(?i:IS)"
+        },
+        {
+          "name": "keyword.operator.reserved.ahk",
+          "match": "(?i:IN|CONTAINS)"
+        },
+        {
+          "name": "keyword.operator.concatenate.ahk",
+          "match": "(?<=\\s)\\.(?=\\s)"
         }
       ]
     },
