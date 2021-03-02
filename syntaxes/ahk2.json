@@ -281,6 +281,10 @@
         {
           "name": "keyword.operator.locigal.ahk",
           "match": "(&&|\\|\\|)"
+        },
+        {
+          "name": "keyword.operator.math.ahk",
+          "match": "\\+|-|\\/|%|\\*"
         }
       ]
     },
@@ -305,15 +309,15 @@
       "patterns": [
         {
           "name": "constant.numeric.hexadecimal.ahk",
-          "match": "\\b(?i:0x[\\da-f]+)\\b"
+          "match": "\\b(?:(?<!\\S)[+-])?(?i:0x[\\da-f]+)\\b"
         },
         {
           "name": "constant.numeric.scientific.ahk",
-          "match": "\\b\\d+[Ee][-+]?\\d+\\b"
+          "match": "\\b(?:(?<!\\S)[+-])?\\d+[Ee][-+]?\\d+\\b"
         },
         {
           "name": "constant.numeric.integer.ahk",
-          "match": "\\b\\d+\\b"
+          "match": "\\b(?:(?<!\\S)[+-])?\\d+\\b"
         }
       ]
     },
