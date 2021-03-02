@@ -299,7 +299,7 @@
         },
         {
           "name": "keyword.operator.logical.ahk",
-          "match": "(?i:&&|\\|\\||!|NOT|AND|OR)"
+          "match": "\\b(?i:&&|\\|\\||!|NOT|AND|OR)\\b"
         },
         {
           "name": "keyword.operator.regex-match.ahk",
@@ -315,11 +315,11 @@
         },
         {
           "name": "keyword.operator.object-comparison.ahk",
-          "match": "(?i:IS)"
+          "match": "\\b(?i:IS)\\b"
         },
         {
           "name": "keyword.operator.reserved.ahk",
-          "match": "(?i:IN|CONTAINS)"
+          "match": "\\b(?i:IN|CONTAINS)\\b"
         },
         {
           "name": "keyword.operator.concatenate.ahk",
