@@ -316,22 +316,8 @@
           "match": "\\b\\d+\\b"
         }
       ]
-    }
-  },
-  "patterns": [
-    {
-      "include": "#line-comment"
     },
-    {
-      "include": "#block-comment"
-    },
-    {
-      "include": "#directive"
-    },
-    {
-      "include": "_#code-block"
-    },
-    {
+    "switch": {
       "name": "meta.switch.ahk",
       "begin": "(switch)(?!$)(?=\\s|\\()",
       "beginCaptures": {
@@ -423,6 +409,23 @@
           ]
         }
       ]
+    }
+  },
+  "patterns": [
+    {
+      "include": "#line-comment"
+    },
+    {
+      "include": "#block-comment"
+    },
+    {
+      "include": "#directive"
+    },
+    {
+      "include": "_#code-block"
+    },
+    {
+      "include": "#switch"
     }
   ],
   "patterns.bak": [
