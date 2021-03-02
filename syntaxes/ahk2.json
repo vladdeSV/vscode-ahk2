@@ -233,7 +233,7 @@
     "string-continuation-double-quote": {
       "name": "string.quoted.double.multiline.ahk",
       "begin": "\"\\s*$",
-      "end": "(?<=\\)\\s*)\"",
+      "end": "\"",
       "patterns": [
         {
           "include": "#string-continuation-content"
@@ -243,7 +243,7 @@
     "string-continuation-single-quote": {
       "name": "string.quoted.single.multiline.ahk",
       "begin": "'\\s*$",
-      "end": "(?<=\\)\\s*)'",
+      "end": "'",
       "patterns": [
         {
           "include": "#string-continuation-content"
@@ -254,8 +254,8 @@
       "patterns": [
         {
           "name": "string.quoted.other.continuation.ahk",
-          "begin": "\\(",
-          "end": "\\)",
+          "begin": "^\\s*\\(",
+          "end": "\\)[^'\"]*",
           "patterns": [
             {
               "include": "#string-escape-character"
