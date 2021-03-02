@@ -286,7 +286,7 @@
       "patterns": [
         {
           "name": "meta.switch.value.ahk",
-          "begin": "\\G\\s*",
+          "begin": "(?<=\\G)",
           "end": "(?=$|\\{)",
           "patterns": [
             {
