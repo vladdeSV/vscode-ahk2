@@ -200,6 +200,9 @@
           "include": "#string-continuation-double-quote"
         },
         {
+          "include": "#string-continuation-single-quote"
+        },
+        {
           "include": "#string-single-quote"
         },
         {
@@ -228,9 +231,26 @@
       ]
     },
     "string-continuation-double-quote": {
-      "name": "string.quoted.double.ahk",
+      "name": "string.quoted.double.multiline.ahk",
       "begin": "\"\\s*$",
       "end": "(?<=\\)\\s*)\"",
+      "patterns": [
+        {
+          "include": "#string-continuation-content"
+        }
+      ]
+    },
+    "string-continuation-single-quote": {
+      "name": "string.quoted.single.multiline.ahk",
+      "begin": "'\\s*$",
+      "end": "(?<=\\)\\s*)'",
+      "patterns": [
+        {
+          "include": "#string-continuation-content"
+        }
+      ]
+    },
+    "string-continuation-content": {
       "patterns": [
         {
           "name": "string.quoted.other.continuation.ahk",
