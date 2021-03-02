@@ -267,7 +267,7 @@
         }
       ]
     },
-    "switch-values": {
+    "common-inline": {
       "patterns": [
         {
           "include": "#string"
@@ -279,13 +279,27 @@
           "include": "#number"
         },
         {
-          "todo": "add variables, methods, functions, etc."
+          "name": "keyword.operator.locigal.ahk",
+          "match": "(&&|\\|\\|)"
+        }
+      ]
+    },
+    "switch-values": {
+      "patterns": [
+        {
+          "include": "#common-inline"
         }
       ]
     },
     "parens": {
+      "name": "meta.parenthesis",
       "begin": "\\(",
-      "end": "\\)"
+      "end": "\\)",
+      "patterns": [
+        {
+          "include": "#common-inline"
+        }
+      ]
     },
     "number": {
       "patterns": [
@@ -332,16 +346,6 @@
           "begin": "(?<=\\G)",
           "end": "(?=$|\\{)",
           "patterns": [
-            {
-              "name": "meta.switch.value-in-parens.ahk",
-              "begin": "\\(",
-              "end": "\\)",
-              "patterns": [
-                {
-                  "include": "#switch-values"
-                }
-              ]
-            },
             {
               "include": "#switch-values"
             }
