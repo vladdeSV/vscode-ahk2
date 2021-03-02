@@ -491,46 +491,6 @@
         }
       ]
     },
-    "if_": {
-      "name": "meta.if.ahk",
-      "begin": "(if)(?!$)(?=\\s|\\()",
-      "beginCaptures": {
-        "1": {
-          "name": "keyword.control.if.ahk"
-        }
-      },
-      "end": "(?<!\\G)(?<=\\S\\s*)$",
-      "patterns": [
-        {
-          "begin": "\\G",
-          "end": "(?=^|\\{)",
-          "patterns": [
-            {
-              "include": "#line-comment"
-            },
-            {
-              "include": "#common-inline"
-            }
-          ]
-        },
-        {
-          "include": "#common-inline"
-        },
-        {
-          "name": "invalid.illegal.ahk",
-          "begin": "\\{",
-          "end": "\\}"
-        },
-        {
-          "name": "foobae",
-          "begin": "(?<=\\})",
-          "end": "(?=else| ^)"
-        },
-        {
-          "include": "#else"
-        }
-      ]
-    },
     "else": {
       "name": "meta.else.ahk",
       "begin": "(else)(?=\\s|\\()",
@@ -546,24 +506,6 @@
         },
         {
           "include": "#code-block"
-        },
-        {
-          "include": "#common-inline"
-        }
-      ]
-    },
-    "else_": {
-      "name": "meta.else.ahk",
-      "begin": "(else)(?=\\s|\\()",
-      "beginCaptures": {
-        "1": {
-          "name": "keyword.control.else.ahk"
-        }
-      },
-      "end": "(?=$|\\{)",
-      "patterns": [
-        {
-          "include": "#if"
         },
         {
           "include": "#common-inline"
