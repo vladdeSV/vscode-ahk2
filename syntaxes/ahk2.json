@@ -524,7 +524,7 @@
       "include": "#directive"
     },
     {
-      "include": "_#code-block"
+      "include": "#code-block"
     },
     {
       "include": "#switch"
