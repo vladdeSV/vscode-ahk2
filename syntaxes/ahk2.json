@@ -27,6 +27,7 @@
       ]
     },
     "code-block": {
+      "name": "meta.code-block.ahk",
       "begin": "\\{",
       "end": "\\}",
       "patterns": [
