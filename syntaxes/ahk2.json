@@ -363,7 +363,7 @@
     },
     "switch": {
       "name": "meta.switch.ahk",
-      "begin": "(switch)(?!$)(?=\\s|\\()",
+      "begin": "((?i:switch))(?!$)(?=\\s|\\()",
       "beginCaptures": {
         "1": {
           "name": "keyword.control.switch.ahk"
@@ -388,13 +388,13 @@
           "patterns": [
             {
               "name": "meta.switch.body.case.ahk",
-              "begin": "(case)",
+              "begin": "((?i:case))",
               "beginCaptures": {
                 "1": {
                   "name": "keyword.control.switch.case.ahk"
                 }
               },
-              "end": "(?=case|default|\\})",
+              "end": "(?i:(?=case|default|\\}))",
               "patterns": [
                 {
                   "name": "meta.switch.body.case.value.ahk",
@@ -413,7 +413,7 @@
                     },
                     {
                       "begin": "^\\s*",
-                      "end": "(?=case|default:|\\})",
+                      "end": "(?i:(?=case|default:|\\}))",
                       "patterns": [
                         {
                           "include": "#common"
@@ -426,20 +426,20 @@
             },
             {
               "name": "meta.switch.body.default.ahk",
-              "begin": "(default):",
+              "begin": "(?i:(default):)",
               "beginCaptures": {
                 "1": {
                   "name": "keyword.control.switch.default.ahk"
                 }
               },
-              "end": "(?=case|\\})",
+              "end": "(?i:(?=case|\\}))",
               "patterns": [
                 {
                   "include": "#line-comment"
                 },
                 {
                   "begin": "^\\s*",
-                  "end": "(?=case|\\})",
+                  "end": "(?i:(?=case|\\}))",
                   "patterns": [
                     {
                       "include": "#common"
