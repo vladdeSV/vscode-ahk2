@@ -6,36 +6,37 @@
     "string-escape-character": {
       "name": "constant.character.escape.ahk",
       "match": "`[\"`:nrbtsvaf]"
-    }
-  },
-  "patterns": [
-    {
-      "name": "meta.method-call.ahk",
-      "match": "(\\w+)(?=\\()",
-      "captures": {
-        "1": {
-          "name": "entity.name.function.ahk"
-        }
-      }
     },
-    {
-      "name": "meta.variable.object.ahk",
-      "match": "(?<=\\w+\\.)(\\w+)(?=\\s)",
-      "captures": {
-        "1": {
-          "name": "variable.other.ahk"
+    "common": {
+      "patterns": [
+        {
+          "include": "#line-comment"
+        },
+        {
+          "include": "#block-comment"
+        },
+        {
+          "include": "#directive"
+        },
+        {
+          "include": "#code-block"
+        },
+        {
+          "include": "#string"
         }
-      }
+      ]
     },
-    {
-      "match": "(%\\w+%)",
-      "captures": {
-        "1": {
-          "name": "variable.other.dynamic.ahk"
+    "code-block": {
+      "name": "meta.code-block.ahk",
+      "begin": "\\{",
+      "end": "\\}",
+      "patterns": [
+        {
+          "include": "#common"
         }
-      }
+      ]
     },
-    {
+    "line-comment": {
       "match": "(?<=^|[ \\t])(;.*)",
       "captures": {
         "1": {
@@ -43,218 +44,12 @@
         }
       }
     },
-    {
+    "block-comment": {
       "name": "comment.block.ahk",
       "begin": "\\/\\*",
       "end": "\\*\\/$"
     },
-    {
-      "name": "string.quoted.single.ahk",
-      "begin": "'",
-      "end": "'",
-      "patterns": [
-        {
-          "include": "#string-escape-character"
-        }
-      ]
-    },
-    {
-      "name": "string.quoted.double.ahk",
-      "begin": "\"",
-      "end": "\"",
-      "patterns": [
-        {
-          "include": "#string-escape-character"
-        }
-      ]
-    },
-    {
-      "description": "language",
-      "patterns": [
-        {
-          "name": "constant.numeric.hexadecimal.ahk",
-          "match": "\\b(?i:0x[\\da-f]+)\\b"
-        },
-        {
-          "name": "constant.numeric.scientific.ahk",
-          "match": "\\b\\d+[Ee][-+]?\\d+\\b"
-        },
-        {
-          "name": "constant.numeric.integer.ahk",
-          "match": "\\b\\d+\\b"
-        },
-        {
-          "name": "constant.language.boolean.ahk",
-          "match": "\\b(?i:true|false)\\b"
-        },
-        {
-          "name": "keyword.control.ahk",
-          "match": "\\b(?i:break|catch|continue|critical|else|exit|exitapp|finally|for|goto|if|onerror|onexit|pause|reload|return|settimer|sleep|suspend|switch|thread|throw|try|until|while|loop(?: (?:read|parse|reg|files))?|=>)\\b"
-        }
-      ]
-    },
-    {
-      "name": "keyword.other.label.ahk",
-      "match": "^\\s*\\w+:(?=\\s)"
-    },
-    {
-      "name": "meta.hotkey.ahk",
-      "match": "(?i:^\\s*([!#^+~]*)([a-z][\\w]*)((\\s*&\\s*)([!#^+~]*)([a-z][\\w]*)?)?)\\s*(?=::)",
-      "captures": {
-        "1": {
-          "name": "keyword.other.modifier.ahk"
-        },
-        "2": {
-          "name": "keyword.other.key.ahk"
-        },
-        "4": {
-          "name": "keyword.other.ampersand.ahk"
-        },
-        "5": {
-          "name": "keyword.other.modifier.ahk"
-        },
-        "6": {
-          "name": "keyword.other.key.ahk"
-        }
-      }
-    },
-    {
-      "description": "escape-character",
-      "patterns": [
-        {
-          "match": "::\\s*(`\\{)",
-          "captures": {
-            "1": {
-              "name": "constant.character.escape.open-brace.ahk"
-            }
-          }
-        },
-        {
-          "match": "(`;)",
-          "captures": {
-            "1": {
-              "name": "constant.character.escape.ahk"
-            }
-          }
-        },
-        {
-          "match": "[^\\t ](`);",
-          "captures": {
-            "1": {
-              "name": "invalid.illegal.unecessary.ahk"
-            }
-          }
-        }
-      ]
-    },
-    {
-      "description": "functions",
-      "patterns": [
-        {
-          "name": "support.function.uncategorized.ahk",
-          "match": "\\b(?i:type)\\b"
-        },
-        {
-          "name": "support.function.window.ahk",
-          "match": "\\b(?i:winactivate(bottom)?|winactive|winclose|winexist|wingetclass|wingetclientpos|wingetcontrols(hwnd)?|wingetcount|wingetexstyle|wingetid|wingetid(last)?|wingetlist|wingetminmax|wingetpid|wingetpos|wingetprocessname|wingetprocesspath|wingetstyle|wingettext|wingettitle|wingettranscolor|wingettransparent|winhide|winkill|win(maximize|minimize(all(undo)?)?)|winmove|winmove(bottom)?|winmove(top)?|winredraw|winrestore|winsetalwaysontop|winsetenabled|winsetexstyle|winsetregion|winsetstyle|winsettitle|winsettranscolor|winsettransparent|winshow|winwait(active|close|notactive)?)\\b"
-        },
-        {
-          "name": "support.function.environment.ahk",
-          "match": "\\b(?i:clipboardall|clipwait|envget|envset|onclipboardchange|sysget(ipaddresses)?)\\b"
-        },
-        {
-          "name": "support.function.drive.ahk",
-          "match": "\\b(?i:driveeject|drivegetcapacity|drivegetfilesystem|drivegetlabel|drivegetlist|drivegetserial|drivegetspacefree|drivegetstatus(cd)?|drivegettype|drivelock|drivesetlabel|driveunlock)\\b"
-        },
-        {
-          "name": "support.function.string.ahk",
-          "match": "\\b(?i:chr|format(time)?|instr|ord|regex(match|replace)|sort|str(compare|get|ing|len|lower|put|replace|split|upper)|substr|[lr]?trim|varsetstrcapacity)\\b"
-        },
-        {
-          "name": "support.function.sound.ahk",
-          "match": "\\b(?i:sound(beep|play)|soundget(interface|mute|name|volume)|soundset(mute|volume))\\b"
-        },
-        {
-          "name": "support.function.screen.ahk",
-          "match": "\\b(?i:imagesearch|pixelgetcolor|pixelsearch)\\b"
-        },
-        {
-          "name": "support.function.registry.ahk",
-          "match": "\\b(?i:reg(read|write|delete(key)?)|setregview)\\b"
-        },
-        {
-          "name": "support.function.process.ahk",
-          "match": "\\b(?i:process(close|exist|setpriority|wait(close)?)|run(wait|as)?|shutdown)\\b"
-        },
-        {
-          "name": "support.function.misc.ahk",
-          "match": "\\b(?i:download|edit|func|getmethod|has(base|method|prop)|is(alnum|alpha|byref|digit|float|func|integer|label|lower|number|object|set|space|time|upper|xdigit)|list(lines|vars)|outputdebug)\\b"
-        },
-        {
-          "name": "support.function.mouse-keyboard.ahk",
-          "match": "\\b(?i:hotkey|hotstring|listhotkeys|blockinput|caretgetpos|click|control(click|send(text)?)|coordmode|getkey(name|sc|state|vk)|key(history|wait)|inputhook|mouse(click(drag)?|getpos|move)|send(text|input|play|event|level|mode)?|set(caps|num|scroll)lockstate|setdefaultmousespeed|set(key|mouse)delay|setstorecapslockmode)\\b"
-        },
-        {
-          "name": "support.function.monitor.ahk",
-          "match": "\\b(?i:monitorget(count|name|primary|workarea)?)\\b"
-        },
-        {
-          "name": "support.function.math.ahk",
-          "match": "\\b(?i:abs|ceil|date(add|diff)|exp|float|floor|integer|log|ln|max|min|mod|random(seed)?|round|sqrt|sin|cos|tan|asin|acos|atan)\\b"
-        },
-        {
-          "name": "support.function.file-directory.ahk",
-          "match": "\\b(?i:dir(copy|create|delete|exist|move|select)|file(append|copy|createshortcut|delete|encoding|exist|get(attrib|shortcut|size|time|version)|install|move|open|read|recycle|recycle(empty)?|select|set(attrib|time))|ini(write|read|delete)|setworkingdir|splitpath)\\b"
-        },
-        {
-          "name": "support.function.external-library.ahk",
-          "match": "\\b(?i:bufferalloc|callback(create|free)|comcall|comobj(active|array|connect|create|flags|get|query|type|value)|comobject|dllcall|num(get|put)|obj(addref|release)|strptr)\\b"
-        }
-      ]
-    },
-    {
-      "description": "magic-constant",
-      "patterns": [
-        {
-          "name": "keyword.other.special-character.ahk",
-          "match": "\\b(?i:a_(space|tab))\\b"
-        },
-        {
-          "name": "keyword.other.script-properties.ahk",
-          "match": "\\b(?i:a_(args|workingdir|initialworkingdir|scriptdir|scriptname|scriptfullpath|scripthwnd|linenumber|linefile|thisfunc|ahkversion|ahkpath|iscompiled))\\b"
-        },
-        {
-          "name": "keyword.other.date-time.ahk",
-          "match": "\\b(?i:a_(yyyy|m{2,4}|d{2,4}|wday|yday|yweek|hour|min|sec|msec|now(utc)?|tickcount))\\b"
-        },
-        {
-          "name": "keyword.other.script-settings.ahk",
-          "match": "\\b(?i:a_(allowmainwindow|controldelay|coordmode(tooltip|pixel|mouse|caret|menu)|defaultmousespeed|detecthidden(text|windows)|fileencoding|icon(hidden|tip|file|number)|is(critical|paused|suspended)|keydelay(play)?|keyduration(play)?|listlines|mousedelay(play)?|regview|send(level|mode)|storecapslockmode|titlematchmode(speed)?|traymenu|windelay))\\b"
-        },
-        {
-          "name": "keyword.other.user-idle-time.ahk",
-          "match": "\\b(?i:a_(timeidle(physical|keyboard|mouse)?))\\b"
-        },
-        {
-          "name": "keyword.other.hotkey-hotstring-custom-menu-item.ahk",
-          "match": "\\b(?i:a_(thishotkey|priorhotkey|priorkey|timesincethishotkey|timesincepriorhotkey|endchar))\\b"
-        },
-        {
-          "name": "keyword.other.operating-system-user-info.ahk",
-          "match": "\\b(?i:a_(appdata(common)?|computername|comspec|desktop(common)?|is64bitos|isadmin|language|mydocuments|osversion|programfiles|programs(common)?|ptrsize|screendpi|screenheight|screenwidth|startmenu(common)?|startup(common)?|temp|username|windir))\\b"
-        },
-        {
-          "name": "keyword.other.misc.ahk",
-          "match": "\\b(?i:a_(clipboard|cursor|eventinfo|lasterror))\\b"
-        },
-        {
-          "name": "keyword.other.loop.ahk",
-          "match": "\\b(?i:a_(index|loop(file|reg|read)name|loopfield))\\b"
-        }
-      ]
-    },
-    {
-      "description": "directive",
+    "directive": {
       "patterns": [
         {
           "name": "keyword.other.directive.ahk",
@@ -333,6 +128,517 @@
               "name": "variable.other.version.ahk"
             }
           }
+        }
+      ]
+    },
+    "function": {
+      "patterns": [
+        {
+          "name": "support.function.uncategorized.ahk",
+          "match": "\\b(?i:type)\\b"
+        },
+        {
+          "name": "support.function.window.ahk",
+          "match": "\\b(?i:winactivate(bottom)?|winactive|winclose|winexist|wingetclass|wingetclientpos|wingetcontrols(hwnd)?|wingetcount|wingetexstyle|wingetid|wingetid(last)?|wingetlist|wingetminmax|wingetpid|wingetpos|wingetprocessname|wingetprocesspath|wingetstyle|wingettext|wingettitle|wingettranscolor|wingettransparent|winhide|winkill|win(maximize|minimize(all(undo)?)?)|winmove|winmove(bottom)?|winmove(top)?|winredraw|winrestore|winsetalwaysontop|winsetenabled|winsetexstyle|winsetregion|winsetstyle|winsettitle|winsettranscolor|winsettransparent|winshow|winwait(active|close|notactive)?)\\b"
+        },
+        {
+          "name": "support.function.environment.ahk",
+          "match": "\\b(?i:clipboardall|clipwait|envget|envset|onclipboardchange|sysget(ipaddresses)?)\\b"
+        },
+        {
+          "name": "support.function.drive.ahk",
+          "match": "\\b(?i:driveeject|drivegetcapacity|drivegetfilesystem|drivegetlabel|drivegetlist|drivegetserial|drivegetspacefree|drivegetstatus(cd)?|drivegettype|drivelock|drivesetlabel|driveunlock)\\b"
+        },
+        {
+          "name": "support.function.string.ahk",
+          "match": "\\b(?i:chr|format(time)?|instr|ord|regex(match|replace)|sort|str(compare|get|ing|len|lower|put|replace|split|upper)|substr|[lr]?trim|varsetstrcapacity)\\b"
+        },
+        {
+          "name": "support.function.sound.ahk",
+          "match": "\\b(?i:sound(beep|play)|soundget(interface|mute|name|volume)|soundset(mute|volume))\\b"
+        },
+        {
+          "name": "support.function.screen.ahk",
+          "match": "\\b(?i:imagesearch|pixelgetcolor|pixelsearch)\\b"
+        },
+        {
+          "name": "support.function.registry.ahk",
+          "match": "\\b(?i:reg(read|write|delete(key)?)|setregview)\\b"
+        },
+        {
+          "name": "support.function.process.ahk",
+          "match": "\\b(?i:process(close|exist|setpriority|wait(close)?)|run(wait|as)?|shutdown)\\b"
+        },
+        {
+          "name": "support.function.misc.ahk",
+          "match": "\\b(?i:download|edit|func|getmethod|has(base|method|prop)|is(alnum|alpha|byref|digit|float|func|integer|label|lower|number|object|set|space|time|upper|xdigit)|list(lines|vars)|outputdebug)\\b"
+        },
+        {
+          "name": "support.function.mouse-keyboard.ahk",
+          "match": "\\b(?i:hotkey|hotstring|listhotkeys|blockinput|caretgetpos|click|control(click|send(text)?)|coordmode|getkey(name|sc|state|vk)|key(history|wait)|inputhook|mouse(click(drag)?|getpos|move)|send(text|input|play|event|level|mode)?|set(caps|num|scroll)lockstate|setdefaultmousespeed|set(key|mouse)delay|setstorecapslockmode)\\b"
+        },
+        {
+          "name": "support.function.monitor.ahk",
+          "match": "\\b(?i:monitorget(count|name|primary|workarea)?)\\b"
+        },
+        {
+          "name": "support.function.math.ahk",
+          "match": "\\b(?i:abs|ceil|date(add|diff)|exp|float|floor|integer|log|ln|max|min|mod|random(seed)?|round|sqrt|sin|cos|tan|asin|acos|atan)\\b"
+        },
+        {
+          "name": "support.function.file-directory.ahk",
+          "match": "\\b(?i:dir(copy|create|delete|exist|move|select)|file(append|copy|createshortcut|delete|encoding|exist|get(attrib|shortcut|size|time|version)|install|move|open|read|recycle|recycle(empty)?|select|set(attrib|time))|ini(write|read|delete)|setworkingdir|splitpath)\\b"
+        },
+        {
+          "name": "support.function.external-library.ahk",
+          "match": "\\b(?i:bufferalloc|callback(create|free)|comcall|comobj(active|array|connect|create|flags|get|query|type|value)|comobject|dllcall|num(get|put)|obj(addref|release)|strptr)\\b"
+        }
+      ]
+    },
+    "string": {
+      "patterns": [
+        {
+          "include": "#string-continuation-double-quote"
+        },
+        {
+          "include": "#string-continuation-single-quote"
+        },
+        {
+          "include": "#string-single-quote"
+        },
+        {
+          "include": "#string-double-quote"
+        }
+      ]
+    },
+    "string-single-quote": {
+      "name": "string.quoted.single.ahk",
+      "begin": "'",
+      "end": "'",
+      "patterns": [
+        {
+          "include": "#string-escape-character"
+        }
+      ]
+    },
+    "string-double-quote": {
+      "name": "string.quoted.double.ahk",
+      "begin": "\"",
+      "end": "\"",
+      "patterns": [
+        {
+          "include": "#string-escape-character"
+        }
+      ]
+    },
+    "string-continuation-double-quote": {
+      "name": "string.quoted.double.multiline.ahk",
+      "begin": "\"\\s*$",
+      "end": "\"",
+      "patterns": [
+        {
+          "include": "#string-continuation-content"
+        }
+      ]
+    },
+    "string-continuation-single-quote": {
+      "name": "string.quoted.single.multiline.ahk",
+      "begin": "'\\s*$",
+      "end": "'",
+      "patterns": [
+        {
+          "include": "#string-continuation-content"
+        }
+      ]
+    },
+    "string-continuation-content": {
+      "patterns": [
+        {
+          "name": "string.quoted.other.continuation.ahk",
+          "begin": "^\\s*\\(",
+          "end": "\\)[^'\"]*",
+          "patterns": [
+            {
+              "include": "#string-escape-character"
+            }
+          ]
+        },
+        {
+          "include": "#line-comment"
+        }
+      ]
+    },
+    "common-inline": {
+      "patterns": [
+        {
+          "include": "#string"
+        },
+        {
+          "include": "#parens"
+        },
+        {
+          "include": "#number"
+        },
+        {
+          "include": "#keyword"
+        }
+      ]
+    },
+    "keyword": {
+      "patterns": [
+        {
+          "name": "keyword.operator.++--.ahk",
+          "match": "\\+\\+|\\-\\-"
+        },
+        {
+          "name": "keyword.operator.math.ahk",
+          "match": "\\+|-|\\/{1,2}|%|\\*{1,2}"
+        },
+        {
+          "name": "keyword.operator.bitwise.ahk",
+          "match": "~|<<|>>|&|\\^|\\|"
+        },
+        {
+          "name": "keyword.operator.logical.ahk",
+          "match": "\\b(?i:&&|\\|\\||!|NOT|AND|OR)\\b"
+        },
+        {
+          "name": "keyword.operator.regex-match.ahk",
+          "match": "~="
+        },
+        {
+          "name": "keyword.operator.assignment.ahk",
+          "match": "(?::|\\+|-|\\*|\\/{1,2}|\\.|\\||&|\\^|>>|<<)="
+        },
+        {
+          "name": "keyword.operator.comparison.ahk",
+          "match": ">=?|<=?|!={1,2}|={1,2}"
+        },
+        {
+          "name": "keyword.operator.object-comparison.ahk",
+          "match": "\\b(?i:IS)\\b"
+        },
+        {
+          "name": "keyword.operator.reserved.ahk",
+          "match": "\\b(?i:IN|CONTAINS)\\b"
+        },
+        {
+          "name": "keyword.operator.concatenate.ahk",
+          "match": "(?<=\\s)\\.(?=\\s)"
+        }
+      ]
+    },
+    "switch-values": {
+      "patterns": [
+        {
+          "include": "#common-inline"
+        }
+      ]
+    },
+    "parens": {
+      "name": "meta.parenthesis",
+      "begin": "\\(",
+      "end": "\\)",
+      "patterns": [
+        {
+          "include": "#common-inline"
+        }
+      ]
+    },
+    "number": {
+      "patterns": [
+        {
+          "name": "constant.numeric.hexadecimal.ahk",
+          "match": "\\b(?:(?<!\\S)[+-])?(?i:0x[\\da-f]+)\\b"
+        },
+        {
+          "name": "constant.numeric.scientific.ahk",
+          "match": "\\b(?:(?<!\\S)[+-])?\\d+[Ee][-+]?\\d+\\b"
+        },
+        {
+          "name": "constant.numeric.integer.ahk",
+          "match": "\\b(?:(?<!\\S)[+-])?\\d+\\b"
+        }
+      ]
+    },
+    "switch": {
+      "name": "meta.switch.ahk",
+      "begin": "((?i:switch))(?!$)(?=\\s|\\()",
+      "beginCaptures": {
+        "1": {
+          "name": "keyword.control.switch.ahk"
+        }
+      },
+      "end": "\\}",
+      "patterns": [
+        {
+          "name": "meta.switch.value.ahk",
+          "begin": "(?<=\\G)",
+          "end": "(?=$|\\{)",
+          "patterns": [
+            {
+              "include": "#switch-values"
+            }
+          ]
+        },
+        {
+          "name": "meta.switch.body.ahk",
+          "begin": "(?<=\\{)",
+          "end": "(?=\\})",
+          "patterns": [
+            {
+              "name": "meta.switch.body.case.ahk",
+              "begin": "((?i:case))",
+              "beginCaptures": {
+                "1": {
+                  "name": "keyword.control.switch.case.ahk"
+                }
+              },
+              "end": "(?i:(?=case|default|\\}))",
+              "patterns": [
+                {
+                  "name": "meta.switch.body.case.value.ahk",
+                  "begin": "\\G\\s*",
+                  "end": ":",
+                  "patterns": [
+                    {
+                      "include": "#switch-values"
+                    }
+                  ]
+                },
+                {
+                  "patterns": [
+                    {
+                      "include": "#line-comment"
+                    },
+                    {
+                      "begin": "^\\s*",
+                      "end": "(?i:(?=case|default:|\\}))",
+                      "patterns": [
+                        {
+                          "include": "#common"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "meta.switch.body.default.ahk",
+              "begin": "(?i:(default):)",
+              "beginCaptures": {
+                "1": {
+                  "name": "keyword.control.switch.default.ahk"
+                }
+              },
+              "end": "(?i:(?=case|\\}))",
+              "patterns": [
+                {
+                  "include": "#line-comment"
+                },
+                {
+                  "begin": "^\\s*",
+                  "end": "(?i:(?=case|\\}))",
+                  "patterns": [
+                    {
+                      "include": "#common"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "patterns": [
+    {
+      "include": "#line-comment"
+    },
+    {
+      "include": "#block-comment"
+    },
+    {
+      "include": "#directive"
+    },
+    {
+      "include": "#code-block"
+    },
+    {
+      "include": "#switch"
+    },
+    {
+      "begin": "((?i:if))(?=\\(|\\s)",
+      "beginCaptures": {
+        "1": {
+          "name": "keyword.control.switch.ahk"
+        }
+      },
+      "end": "$",
+      "patterns": [
+        {
+          "include": "#common-inline"
+        },
+        {
+          "include": "#line-comment"
+        }
+      ]
+    },
+    {
+      "begin": "((?i:else))(?=\\(|\\s)",
+      "end": "(?=(?i:if)|$)",
+      "captures": {
+        "1": {
+          "name": "keyword.control.ahk"
+        }
+      },
+      "patterns": [
+        {
+          "include": "#common-inline"
+        },
+        {
+          "include": "#line-comment"
+        }
+      ]
+    }
+  ],
+  "patterns.bak": [
+    {
+      "name": "meta.hotkey.ahk",
+      "match": "(?i:^\\s*([!#^+~]*)([a-z][\\w]*)((\\s*&\\s*)([!#^+~]*)([a-z][\\w]*)?)?)\\s*(?=::)",
+      "captures": {
+        "1": {
+          "name": "keyword.other.modifier.ahk"
+        },
+        "2": {
+          "name": "keyword.other.key.ahk"
+        },
+        "4": {
+          "name": "keyword.other.ampersand.ahk"
+        },
+        "5": {
+          "name": "keyword.other.modifier.ahk"
+        },
+        "6": {
+          "name": "keyword.other.key.ahk"
+        }
+      }
+    },
+    {
+      "name": "meta.method-call.ahk",
+      "match": "(\\w+)(?=\\()",
+      "captures": {
+        "1": {
+          "name": "entity.name.function.ahk"
+        }
+      }
+    },
+    {
+      "name": "meta.variable.object.ahk",
+      "match": "(?<=\\w+\\.)(\\w+)(?=\\s)",
+      "captures": {
+        "1": {
+          "name": "variable.other.ahk"
+        }
+      }
+    },
+    {
+      "match": "(%\\w+%)",
+      "captures": {
+        "1": {
+          "name": "variable.other.dynamic.ahk"
+        }
+      }
+    },
+    {
+      "description": "language",
+      "patterns": [
+        {
+          "include": "#number"
+        },
+        {
+          "name": "constant.language.boolean.ahk",
+          "match": "\\b(?i:true|false)\\b"
+        },
+        {
+          "name": "keyword.control.ahk",
+          "match": "\\b(?i:break|catch|continue|critical|else|exit|exitapp|finally|for|goto|if|onerror|onexit|pause|reload|return|settimer|sleep|suspend|switch|thread|throw|try|until|while|loop(?: (?:read|parse|reg|files))?|=>)\\b"
+        }
+      ]
+    },
+    {
+      "name": "keyword.other.label.ahk",
+      "match": "^\\s*\\w+:(?=\\s)"
+    },
+    {
+      "description": "escape-character",
+      "patterns": [
+        {
+          "match": "::\\s*(`\\{)",
+          "captures": {
+            "1": {
+              "name": "constant.character.escape.open-brace.ahk"
+            }
+          }
+        },
+        {
+          "match": "(`;)",
+          "captures": {
+            "1": {
+              "name": "constant.character.escape.ahk"
+            }
+          }
+        },
+        {
+          "match": "[^\\t ](`);",
+          "captures": {
+            "1": {
+              "name": "invalid.illegal.unecessary.ahk"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "description": "magic-constant",
+      "patterns": [
+        {
+          "name": "keyword.other.special-character.ahk",
+          "match": "\\b(?i:a_(space|tab))\\b"
+        },
+        {
+          "name": "keyword.other.script-properties.ahk",
+          "match": "\\b(?i:a_(args|workingdir|initialworkingdir|scriptdir|scriptname|scriptfullpath|scripthwnd|linenumber|linefile|thisfunc|ahkversion|ahkpath|iscompiled))\\b"
+        },
+        {
+          "name": "keyword.other.date-time.ahk",
+          "match": "\\b(?i:a_(yyyy|m{2,4}|d{2,4}|wday|yday|yweek|hour|min|sec|msec|now(utc)?|tickcount))\\b"
+        },
+        {
+          "name": "keyword.other.script-settings.ahk",
+          "match": "\\b(?i:a_(allowmainwindow|controldelay|coordmode(tooltip|pixel|mouse|caret|menu)|defaultmousespeed|detecthidden(text|windows)|fileencoding|icon(hidden|tip|file|number)|is(critical|paused|suspended)|keydelay(play)?|keyduration(play)?|listlines|mousedelay(play)?|regview|send(level|mode)|storecapslockmode|titlematchmode(speed)?|traymenu|windelay))\\b"
+        },
+        {
+          "name": "keyword.other.user-idle-time.ahk",
+          "match": "\\b(?i:a_(timeidle(physical|keyboard|mouse)?))\\b"
+        },
+        {
+          "name": "keyword.other.hotkey-hotstring-custom-menu-item.ahk",
+          "match": "\\b(?i:a_(thishotkey|priorhotkey|priorkey|timesincethishotkey|timesincepriorhotkey|endchar))\\b"
+        },
+        {
+          "name": "keyword.other.operating-system-user-info.ahk",
+          "match": "\\b(?i:a_(appdata(common)?|computername|comspec|desktop(common)?|is64bitos|isadmin|language|mydocuments|osversion|programfiles|programs(common)?|ptrsize|screendpi|screenheight|screenwidth|startmenu(common)?|startup(common)?|temp|username|windir))\\b"
+        },
+        {
+          "name": "keyword.other.misc.ahk",
+          "match": "\\b(?i:a_(clipboard|cursor|eventinfo|lasterror))\\b"
+        },
+        {
+          "name": "keyword.other.loop.ahk",
+          "match": "\\b(?i:a_(index|loop(file|reg|read)name|loopfield))\\b"
         }
       ]
     }
