@@ -37,12 +37,9 @@
       ]
     },
     "line-comment": {
-      "match": "(?<=^|[ \\t])(;.*)",
-      "captures": {
-        "1": {
-          "name": "comment.line.character.semicolon.ahk"
-        }
-      }
+      "name": "comment.line.character.semicolon.ahk",
+      "begin": "(?<=^|[ \\t])(;)",
+      "end": "^"
     },
     "block-comment": {
       "name": "comment.block.ahk",
