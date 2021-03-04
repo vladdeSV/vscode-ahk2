@@ -448,6 +448,36 @@
           ]
         }
       ]
+    },
+    "loop": {
+      "name": "meta.loop.ahk",
+      "begin": "((?i:loop))",
+      "beginCaptures": {
+        "1": {
+          "name": "keyword.control.ahk"
+        }
+      },
+      "end": "^",
+      "patterns": [
+        {
+          "begin": "\\G",
+          "end": "(?<=\\})|(?<=\\S)(?<!\\*\\/)$",
+          "patterns": [
+            {
+              "include": "#line-comment"
+            },
+            {
+              "include": "#block-comment"
+            },
+            {
+              "include": "#common-inline"
+            },
+            {
+              "include": "#code-block"
+            }
+          ]
+        }
+      ]
     }
   },
   "patterns": [
@@ -465,6 +495,9 @@
     },
     {
       "include": "#switch"
+    },
+    {
+      "include": "#loop"
     },
     {
       "begin": "((?i:if))(?=\\(|\\s)",
