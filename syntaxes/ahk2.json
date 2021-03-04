@@ -470,7 +470,38 @@
       "include": "#switch"
     },
     {
-      "include": "#if"
+      "begin": "((?i:if))(?=\\(|\\s)",
+      "beginCaptures": {
+        "1": {
+          "name": "keyword.control.switch.ahk"
+        }
+      },
+      "end": "$",
+      "patterns": [
+        {
+          "include": "#common-inline"
+        },
+        {
+          "include": "#line-comment"
+        }
+      ]
+    },
+    {
+      "begin": "((?i:else))(?=\\(|\\s)",
+      "end": "(?=(?i:if)|$)",
+      "captures": {
+        "1": {
+          "name": "keyword.control.ahk"
+        }
+      },
+      "patterns": [
+        {
+          "include": "#common-inline"
+        },
+        {
+          "include": "#line-comment"
+        }
+      ]
     }
   ],
   "patterns.bak": [
