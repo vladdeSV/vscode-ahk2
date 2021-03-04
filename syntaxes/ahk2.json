@@ -47,7 +47,7 @@
     "block-comment": {
       "name": "comment.block.ahk",
       "begin": "\\/\\*",
-      "end": "\\*\\/$"
+      "end": "\\*\\/\\s*$"
     },
     "directive": {
       "patterns": [
