@@ -503,19 +503,23 @@
       "include": "#loop"
     },
     {
+      "name": "meta.if.ahk",
       "begin": "((?i:if))(?=\\(|\\s)",
       "beginCaptures": {
         "1": {
           "name": "keyword.control.switch.ahk"
         }
       },
-      "end": "$",
+      "end": "(?<=\\})|(?=$)",
       "patterns": [
         {
           "include": "#expression"
         },
         {
           "include": "#line-comment"
+        },
+        {
+          "include": "#code-block"
         }
       ]
     },
