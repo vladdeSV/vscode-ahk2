@@ -44,8 +44,8 @@
     },
     "code-block": {
       "name": "meta.code-block.ahk",
-      "begin": "\\{",
-      "end": "\\}",
+      "begin": "(?<=^\\s*)\\{|\\{(?=\\s*$)",
+      "end": "(?<=^\\s*)\\}",
       "patterns": [
         {
           "include": "#common"
