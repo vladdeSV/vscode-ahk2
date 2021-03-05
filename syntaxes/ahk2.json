@@ -7,6 +7,22 @@
       "name": "constant.character.escape.ahk",
       "match": "`[\"`:nrbtsvaf]"
     },
+    "expression": {
+      "patterns": [
+        {
+          "include": "#string"
+        },
+        {
+          "include": "#parens"
+        },
+        {
+          "include": "#number"
+        },
+        {
+          "include": "#keyword"
+        }
+      ]
+    },
     "common": {
       "patterns": [
         {
@@ -268,22 +284,6 @@
         }
       ]
     },
-    "common-inline": {
-      "patterns": [
-        {
-          "include": "#string"
-        },
-        {
-          "include": "#parens"
-        },
-        {
-          "include": "#number"
-        },
-        {
-          "include": "#keyword"
-        }
-      ]
-    },
     "keyword": {
       "patterns": [
         {
@@ -331,7 +331,7 @@
     "switch-values": {
       "patterns": [
         {
-          "include": "#common-inline"
+          "include": "#expression"
         }
       ]
     },
@@ -341,7 +341,7 @@
       "end": "\\)",
       "patterns": [
         {
-          "include": "#common-inline"
+          "include": "#expression"
         }
       ]
     },
@@ -473,7 +473,7 @@
               "include": "#block-comment"
             },
             {
-              "include": "#common-inline"
+              "include": "#expression"
             },
             {
               "include": "#code-block"
@@ -512,7 +512,7 @@
       "end": "$",
       "patterns": [
         {
-          "include": "#common-inline"
+          "include": "#expression"
         },
         {
           "include": "#line-comment"
@@ -530,7 +530,7 @@
       },
       "patterns": [
         {
-          "include": "#common-inline"
+          "include": "#expression"
         },
         {
           "include": "#line-comment"
