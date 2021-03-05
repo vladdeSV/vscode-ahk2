@@ -520,11 +520,12 @@
       ]
     },
     {
+      "name": "meta.else.ahk",
       "begin": "((?i:else))(?=\\(|\\s)",
-      "end": "(?=(?i:if)|$)",
+      "end": "(?<=\\})|(?=(?i:if)|$)",
       "captures": {
         "1": {
-          "name": "keyword.control.ahk"
+          "name": "keyword.control.else.ahk"
         }
       },
       "patterns": [
@@ -533,6 +534,9 @@
         },
         {
           "include": "#line-comment"
+        },
+        {
+          "include": "#code-block"
         }
       ]
     }
