@@ -19,7 +19,7 @@
           "include": "#number"
         },
         {
-          "include": "#keyword"
+          "include": "#operator"
         }
       ]
     },
@@ -284,7 +284,7 @@
         }
       ]
     },
-    "keyword": {
+    "operator": {
       "patterns": [
         {
           "name": "keyword.operator.++--.ahk",
