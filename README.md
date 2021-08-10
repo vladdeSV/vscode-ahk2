@@ -1,5 +1,5 @@
-### wip
-currently unusable. working on it.
+### do not use
+unusable. keeping for github streak.
 
 <div align="center">
   <img src="https://github.com/vladdeSV/vscode-ahk2/blob/main/resource/icon.png?raw=true" height="150" width="150">
